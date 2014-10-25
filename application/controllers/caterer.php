@@ -24,15 +24,15 @@ class Caterer extends CI_Controller {
 
 	public function login()
 	{
-	    if ($this->input->server('REQUEST_METHOD') === 'POST') {
+	    //if ($this->input->server('REQUEST_METHOD') === 'POST') {
             if ($this->_login_submit_validate() === false) {
                 $this->login();
                 return;
             }
             redirect('/caterer');
-        } else {
+       	//} else {
             redirect('/caterer');
-        }
+        //}
 	}
 
     private function _login_submit_validate()
