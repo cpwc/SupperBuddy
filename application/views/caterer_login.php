@@ -48,7 +48,6 @@
 <div class="content">
 	<!-- BEGIN LOGIN FORM -->
 	<?php echo form_open('caterer/login', array('class' => 'login-form')); ?>
-	<form class="login-form" action="caterer/login" method="post">
 		<h3 class="form-title">Caterer Login</h3>
 		<div class="alert alert-danger display-hide">
 			<button class="close" data-close="alert"></button>
