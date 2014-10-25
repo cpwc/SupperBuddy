@@ -24,31 +24,21 @@ class Caterer extends CI_Controller {
 
 	public function login()
 	{
-	    //if ($this->input->server('REQUEST_METHOD') === 'POST') {
-            if ($this->_login_submit_validate() === false) {
-                $this->login();
-                return;
-            }
-            redirect('/caterer');
-       	//} else {
-            redirect('/caterer');
-        //}
+		$this->form_validation->set_rules('email', 'Email', 'required');
+		$this->form_validation->set_rules('password', 'Password', 'required');
+		
+
+		if ($this->form_validation->run() == FALSE)
+		{
+			$this->load->view('caterer_login');
+		}
+		else
+		{
+			$this->load->view('welcome_message');
+		}
 	}
 
-    private function _login_submit_validate()
-    {
-        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|xss_clean');
-        $this->form_validation->set_rules('password', 'Password', 'trim|required');
-        //$this->form_validation->set_message('authenticate', 'Invalid email or password. Please try again.');
-
-        return $this->form_validation->run();
-    }
-
-    public function authenticate()
-    {
-        return false;
-    }
 }
 
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
+/* End of file caterer.php */
+/* Location: ./application/controllers/caterer.php */
