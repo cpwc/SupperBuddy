@@ -49,7 +49,10 @@ class Caterer extends CI_Controller {
 		$user = $query->row();
 
 		$hashed = $user->password;
+		echo $hashed;
+
 		$password = $this->input->post('password');
+		echo $password;
 
 		if ($this->phpass->check($password, $hashed))
 		    echo 'logged in';
