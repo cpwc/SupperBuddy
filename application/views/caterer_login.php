@@ -34,15 +34,6 @@
 <link rel="shortcut icon" href="favicon.ico"/>
 </head>
 <!-- BEGIN BODY -->
-<!-- DOC: Apply "page-header-fixed-mobile" and "page-footer-fixed-mobile" class to body element to force fixed header or footer in mobile devices -->
-<!-- DOC: Apply "page-sidebar-closed" class to the body and "page-sidebar-menu-closed" class to the sidebar menu element to hide the sidebar by default -->
-<!-- DOC: Apply "page-sidebar-hide" class to the body to make the sidebar completely hidden on toggle -->
-<!-- DOC: Apply "page-sidebar-closed-hide-logo" class to the body element to make the logo hidden on sidebar toggle -->
-<!-- DOC: Apply "page-sidebar-hide" class to body element to completely hide the sidebar on sidebar toggle -->
-<!-- DOC: Apply "page-sidebar-fixed" class to have fixed sidebar -->
-<!-- DOC: Apply "page-footer-fixed" class to the body element to have fixed footer -->
-<!-- DOC: Apply "page-sidebar-reversed" class to put the sidebar on the right side -->
-<!-- DOC: Apply "page-full-width" class to the body element to have full width page without the sidebar menu -->
 <body class="login">
 <!-- BEGIN LOGO -->
 <div class="logo">
@@ -226,17 +217,11 @@
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="/public/scripts/metronic.js" type="text/javascript"></script>
-<script src="/public/scripts/layout.js" type="text/javascript"></script>
-<script src="/public/scripts/quick-sidebar.js" type="text/javascript"></script>
-<script src="/public/scripts/demo.js" type="text/javascript"></script>
 <script src="/public/scripts/login.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
 jQuery(document).ready(function() {     
   Metronic.init(); // init metronic core components
-Layout.init(); // init current layout
-QuickSidebar.init(); // init quick sidebar
-Demo.init(); // init demo features
   Login.init();
 });
 </script>
