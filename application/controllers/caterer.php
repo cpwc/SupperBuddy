@@ -30,6 +30,10 @@ class Caterer extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE)
 		{
+			$password = $this->input->post('password');
+			$hashed = $this->phpass->hash($password);
+			echo $hashed;
+			
 			$this->load->view('caterer_login');
 		}
 		else
