@@ -187,7 +187,7 @@ var Login = function () {
         init: function () {
         	
             handleForgetPassword();
-            handleRegister();        
+            //handleRegister();
 	       
         }
 

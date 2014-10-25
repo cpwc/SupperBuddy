@@ -30,7 +30,7 @@ class Caterer extends CI_Controller {
 			$this->form_validation->set_rules('address', 'Address', 'required');
 			$this->form_validation->set_rules('email', 'Email', 'required');
 			$this->form_validation->set_rules('password', 'Password', 'required');
-			$this->form_validation->set_rules('rpassword', 'Re-type Password', 'required');
+			$this->form_validation->set_rules('rpassword', 'Re-type Password', 'required|matches[password]');
 
 			if ($this->form_validation->run() == FALSE) {
 				redirect('/caterer/register');
@@ -59,7 +59,14 @@ class Caterer extends CI_Controller {
 
 	private function _register()
 	{
-		return FALSE;
+		$password = $this->input->post('password');
+		$hashed = $this->phpass->hash($password);
+		$time = time();
+
+		$sql = "INSERT INTO caterer (name, email, address, password, created_at, updated_at) VALUES('" . $this->input->post('organizationname') . "','" . $this->input->post('email') . "','" . $this->input->post('address') . "','" . $hashed . "','" . $time . "','" . $time . "')";
+		$this->db->query($sql);
+
+         echo $this->db->affected_rows();
 	}
 
 }
