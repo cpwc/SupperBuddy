@@ -33,7 +33,7 @@ class Caterer extends CI_Controller {
 			$password = $this->input->post('password');
 			$hashed = $this->phpass->hash($password);
 			echo $hashed;
-			
+
 			$this->load->view('caterer_login');
 		}
 		else
@@ -46,9 +46,15 @@ class Caterer extends CI_Controller {
 	private function _authenticate()
 	{
 		$query = $this->db->query('SELECT * FROM caterer WHERE email = "' . $this->input->post('email') . '" LIMIT 1');
+		$user = $query->row();
 
-		$row = $query->row();
-		echo $row->name;
+		$hashed = $user->password;
+		$password = $this->input->post('password');
+
+		if ($this->phpass->check($password, $hashed))
+		    echo 'logged in';
+		else
+		    echo 'wrong password';
 	}
 
 }
