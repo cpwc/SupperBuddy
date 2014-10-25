@@ -34,8 +34,17 @@ class Caterer extends CI_Controller {
 		}
 		else
 		{
-			$this->load->view('welcome_message');
+			$this->_authenticate();
+			//$this->load->view('welcome_message');
 		}
+	}
+
+	private function _authenticate()
+	{
+		$query = $this->db->query('SELECT * FROM caterer WHERE email = ' . $this->input->post('email') . ' LIMIT 1');
+
+		$row = $query->row();
+		echo $row->name;
 	}
 
 }
