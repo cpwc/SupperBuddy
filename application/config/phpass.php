@@ -15,4 +15,4 @@ if (!defined('BASEPATH'))
 */
 
 $config['iteration_count_log2'] = 8;
-$config['portable_hashes']      = FALSE;
+$config['portable_hashes']      = TRUE;
