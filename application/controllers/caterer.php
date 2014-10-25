@@ -2,44 +2,42 @@
 
 class Caterer extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
 	public function index()
 	{
-		$this->load->view('caterer_login');
+		redirect('/caterer/login');
 	}
 
 	public function login()
 	{
-		$this->form_validation->set_rules('email', 'Email', 'required');
-		$this->form_validation->set_rules('password', 'Password', 'required');
-		
+		if ($this->input->server('REQUEST_METHOD') == 'POST') {
+			$this->form_validation->set_rules('email', 'Email', 'required');
+			$this->form_validation->set_rules('password', 'Password', 'required');
 
-		if ($this->form_validation->run() == FALSE)
-		{
-			$password = $this->input->post('password');
-			$hashed = $this->phpass->hash($password);
-			echo $hashed;
 
+			if ($this->form_validation->run() == FALSE) {
+				redirect('/caterer/login');
+			} else {
+				$this->_authenticate();
+			}
+		} else {
 			$this->load->view('caterer_login');
 		}
-		else
-		{
-			$this->_authenticate();
-			//$this->load->view('welcome_message');
+	}
+
+	public function register()
+	{
+		if ($this->input->server('REQUEST_METHOD') == 'POST') {
+			$this->form_validation->set_rules('email', 'Email', 'required');
+			$this->form_validation->set_rules('password', 'Password', 'required');
+
+
+			if ($this->form_validation->run() == FALSE) {
+				redirect('/caterer/register');
+			} else {
+				$this->_register();
+			}
+		} else {
+			$this->load->view('caterer_register');
 		}
 	}
 
@@ -49,17 +47,18 @@ class Caterer extends CI_Controller {
 		$user = $query->row();
 
 		$hashed = $user->password;
-		echo $hashed;
-
 		$password = $this->input->post('password');
-		echo $password;
 
-		var_dump($this->phpass->check($password, $hashed));
-
-		if ($this->phpass->check($password, $hashed))
+		if ($this->phpass->check($password, $hashed)) {
 		    echo 'logged in';
-		else
+		} else {
 		    echo 'wrong password 1';
+		}
+	}
+
+	private function _register()
+	{
+		return FALSE;
 	}
 
 }
