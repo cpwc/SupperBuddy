@@ -29,17 +29,17 @@ class Caterer extends CI_Controller {
                 $this->login();
                 return;
             }
-            redirect('/');
+            redirect('/caterer');
         } else {
-            redirect('/');
+            redirect('/caterer');
         }
 	}
 
     private function _login_submit_validate()
     {
-        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|callback_authenticate|xss_clean');
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|xss_clean');
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
-        $this->form_validation->set_message('authenticate', 'Invalid email or password. Please try again.');
+        //$this->form_validation->set_message('authenticate', 'Invalid email or password. Please try again.');
 
         return $this->form_validation->run();
     }
