@@ -13,7 +13,6 @@ class Caterer extends CI_Controller {
 			$this->form_validation->set_rules('email', 'Email', 'required');
 			$this->form_validation->set_rules('password', 'Password', 'required');
 
-
 			if ($this->form_validation->run() == FALSE) {
 				redirect('/caterer/login');
 			} else {
@@ -27,9 +26,11 @@ class Caterer extends CI_Controller {
 	public function register()
 	{
 		if ($this->input->server('REQUEST_METHOD') == 'POST') {
+			$this->form_validation->set_rules('organizationname', 'Organization Name', 'required');
+			$this->form_validation->set_rules('address', 'Address', 'required');
 			$this->form_validation->set_rules('email', 'Email', 'required');
 			$this->form_validation->set_rules('password', 'Password', 'required');
-
+			$this->form_validation->set_rules('rpassword', 'Re-type Password', 'required');
 
 			if ($this->form_validation->run() == FALSE) {
 				redirect('/caterer/register');

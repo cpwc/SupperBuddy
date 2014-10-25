@@ -47,16 +47,16 @@
 <!-- BEGIN LOGIN -->
 <div class="content">
 	<!-- BEGIN REGISTRATION FORM -->
-	<form class="register-form" action="index.html" method="post">
+	<?php echo form_open('caterer/register', array('class' => 'register-form')); ?>
 		<h3>Sign Up</h3>
 		<p>
 			 Enter your personal details below:
 		</p>
 		<div class="form-group">
-			<label class="control-label visible-ie8 visible-ie9">Full Name</label>
+			<label class="control-label visible-ie8 visible-ie9">Organization Name</label>
 			<div class="input-icon">
 				<i class="fa fa-font"></i>
-				<input class="form-control placeholder-no-fix" type="text" placeholder="Full Name" name="fullname"/>
+				<input class="form-control placeholder-no-fix" type="text" placeholder="Organization Name" name="organizationname"/>
 			</div>
 		</div>
 		<div class="form-group">
@@ -71,17 +71,7 @@
 			<label class="control-label visible-ie8 visible-ie9">Address</label>
 			<div class="input-icon">
 				<i class="fa fa-check"></i>
-				<input class="form-control placeholder-no-fix" type="text" placeholder="Address" name="address"/>
-			</div>
-		</div>
-		<p>
-			 Enter your account details below:
-		</p>
-		<div class="form-group">
-			<label class="control-label visible-ie8 visible-ie9">Username</label>
-			<div class="input-icon">
-				<i class="fa fa-user"></i>
-				<input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Username" name="username"/>
+				<textarea class="form-control placeholder-no-fix" rows="3" placeholder="Address" name="address"></textarea>
 			</div>
 		</div>
 		<div class="form-group">
@@ -102,10 +92,7 @@
 		</div>
 		<div class="form-group">
 			<label>
-			<input type="checkbox" name="tnc"/> I agree to the <a href="#">
-			Terms of Service </a>
-			and <a href="#">
-			Privacy Policy </a>
+				<input type="checkbox" name="tnc"/> I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
 			</label>
 			<div id="register_tnc_error">
 			</div>
