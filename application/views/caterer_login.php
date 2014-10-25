@@ -47,6 +47,7 @@
 <!-- BEGIN LOGIN -->
 <div class="content">
 	<!-- BEGIN LOGIN FORM -->
+	<?php echo form_open('caterer/login', array('class' => 'login-form')); ?>
 	<form class="login-form" action="caterer/login" method="post">
 		<h3 class="form-title">Caterer Login</h3>
 		<div class="alert alert-danger display-hide">
@@ -104,7 +105,7 @@
 				Create an account </a>
 			</p>
 		</div>
-	</form>
+	<?php echo form_close(); ?>
 	<!-- END LOGIN FORM -->
 	<!-- BEGIN FORGOT PASSWORD FORM -->
 	<form class="forget-form" action="index.html" method="post">
