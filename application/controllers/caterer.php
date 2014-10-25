@@ -59,7 +59,7 @@ class Caterer extends CI_Controller {
 		if ($this->phpass->check($password, $hashed))
 		    echo 'logged in';
 		else
-		    echo 'wrong password';
+		    echo 'wrong password 1';
 	}
 
 }
