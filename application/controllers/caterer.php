@@ -41,7 +41,7 @@ class Caterer extends CI_Controller {
 
 	private function _authenticate()
 	{
-		$query = $this->db->query('SELECT * FROM caterer WHERE email = ' . $this->input->post('email') . ' LIMIT 1');
+		$query = $this->db->query('SELECT * FROM caterer WHERE email = "' . $this->input->post('email') . '" LIMIT 1');
 
 		$row = $query->row();
 		echo $row->name;
