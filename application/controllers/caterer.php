@@ -63,7 +63,7 @@ class Caterer extends CI_Controller {
 		$hashed = $this->phpass->hash($password);
 		$time = time();
 
-		$sql = "INSERT INTO caterer (name, email, address, password, created_at, updated_at) VALUES('" . $this->input->post('organizationname') . "','" . $this->input->post('email') . "','" . $this->input->post('address') . "','" . $hashed . "','" . $time . "','" . $time . "')";
+		$sql = "INSERT INTO caterer (name, email, address, password, created_at, updated_at) VALUES('" . $this->input->post('organizationname') . "','" . $this->input->post('email') . "','" . $this->input->post('address') . "','" . $hashed . "','" . now() . "','" . now() . "')";
 		$this->db->query($sql);
 
          echo $this->db->affected_rows();
