@@ -36,5 +36,5 @@ class Student extends CI_Controller {
 
 }
 
-/* End of file caterer.php */
-/* Location: ./application/controllers/caterer.php */
+/* End of file student.php */
+/* Location: ./application/controllers/student.php */
