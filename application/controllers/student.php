@@ -11,7 +11,6 @@ class Student extends CI_Controller {
 	{
 		if ($this->input->server('REQUEST_METHOD') == 'POST') {
 			$this->form_validation->set_rules('nussid', 'NUSSID', 'required');
-			$this->form_validation->set_rules('password', 'Password', 'required');
 
 			if ($this->form_validation->run() == FALSE) {
 				redirect('/student/login');

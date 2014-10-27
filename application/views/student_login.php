@@ -75,13 +75,6 @@
 				<input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="NUSS ID" name="nussid"/>
 			</div>
 		</div>
-		<div class="form-group">
-			<label class="control-label visible-ie8 visible-ie9">Password</label>
-			<div class="input-icon">
-				<i class="fa fa-lock"></i>
-				<input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password"/>
-			</div>
-		</div>
 		<div class="form-actions">
 			<label class="checkbox">
 			<input type="checkbox" name="remember" value="1"/> Remember me </label>
