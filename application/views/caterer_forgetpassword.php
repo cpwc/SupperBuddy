@@ -47,7 +47,7 @@
 <!-- BEGIN LOGIN -->
 <div class="content">
 	<!-- BEGIN FORGOT PASSWORD FORM -->
-	<?php echo form_open('caterer/login', array('class' => 'forget-form')); ?>
+	<?php echo form_open('caterer/forgetpassword', array('class' => 'forget-form')); ?>
 		<h3>Forget Password ?</h3>
 		<p>
 			 Enter your e-mail address below to reset your password.
