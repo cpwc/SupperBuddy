@@ -42,6 +42,22 @@ class Caterer extends CI_Controller {
 		}
 	}
 
+	public function forgetpassword()
+	{
+		if ($this->input->server('REQUEST_METHOD') == 'POST') {
+			$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+			
+
+			if ($this->form_validation->run() == FALSE) {
+				redirect('/caterer/forgetpassword');
+			} else {
+				$this->_forgetpassword();
+			}
+		} else {
+			$this->load->view('caterer_forgetpassword');
+		}
+	}
+
 	private function _authenticate()
 	{
 		$query = $this->db->query('SELECT * FROM caterer WHERE email = "' . $this->input->post('email') . '" LIMIT 1');
@@ -67,6 +83,20 @@ class Caterer extends CI_Controller {
 		$this->db->query($sql);
 
          echo $this->db->affected_rows();
+	}
+
+	private function _forgetpassword()
+	{
+		$email = $this->input->post('email');
+
+		$sql = "SELECT * FROM caterer WHERE email = '" . $email . "' LIMIT 1";
+		$user = $query->row();
+
+		if($user != null){
+         echo $user->password;
+		}else{
+		 echo 'Empty record.';
+		}
 	}
 
 }
