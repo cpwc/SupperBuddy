@@ -93,15 +93,12 @@
 		<div class="forget-password">
 			<h4>Forgot your password ?</h4>
 			<p>
-				 no worries, click <a href="javascript:;" id="forget-password">
-				here </a>
-				to reset your password.
+				 no worries, click <?php echo anchor('caterer/forgetpassword', 'here') ?> to reset your password.
 			</p>
 		</div>
 		<div class="create-account">
 			<p>
-				 Don't have an account yet ?&nbsp; <a href="javascript:;" id="register-btn">
-				Create an account </a>
+				 Don't have an account yet? <?php echo anchor('caterer/forgetpassword', 'Create an account') ?>
 			</p>
 		</div>
 	<?php echo form_close(); ?>
