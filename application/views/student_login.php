@@ -72,7 +72,7 @@
 			<label class="control-label visible-ie8 visible-ie9">Username</label>
 			<div class="input-icon">
 				<i class="fa fa-user"></i>
-				<input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="NUSS ID" name="nussid"/>
+				<input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="USENET ID" name="usenetid"/>
 			</div>
 		</div>
 		<div class="form-actions">
