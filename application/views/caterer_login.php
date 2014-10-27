@@ -98,7 +98,7 @@
 		</div>
 		<div class="create-account">
 			<p>
-				 Don't have an account yet? <?php echo anchor('caterer/forgetpassword', 'Create an account') ?>
+				 Don't have an account yet? <?php echo anchor('caterer/register', 'Create an account') ?>
 			</p>
 		</div>
 	<?php echo form_close(); ?>
