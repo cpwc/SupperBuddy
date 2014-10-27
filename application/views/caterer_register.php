@@ -98,7 +98,7 @@
 			</div>
 		</div>
 		<div class="form-actions">
-			<?php echo anchor('caterer/login', '<i class="m-icon-swapleft"></i> Back', array('class' => 'btn', 'id' => 'register-back-btn') ?>
+			<?php echo anchor('caterer/login', '<i class="m-icon-swapleft"></i> Back', array('class' => 'btn', 'id' => 'register-back-btn')) ?>
 			<button type="submit" id="register-submit-btn" class="btn green pull-right">
 			Sign Up <i class="m-icon-swapright m-icon-white"></i>
 			</button>
