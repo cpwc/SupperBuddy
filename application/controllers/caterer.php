@@ -80,7 +80,7 @@ class Caterer extends CI_Controller
     {
         $password = $this->input->post('password');
         $hashed   = $this->phpass->hash($password);
-        $time     = now();
+        $time     = date('Y-m-d H:i:s');
         
         $params = array(
             'name' => $this->input->post('organizationname'),
