@@ -93,9 +93,9 @@ class Caterer extends CI_Controller {
 		$user = $query->row();
 
 		if($user != null){
-         echo $user->password;
+			echo $user->password;
 		}else{
-		 echo 'Empty record.';
+			echo 'Empty record.';
 		}
 	}
 
