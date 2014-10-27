@@ -18,7 +18,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN HEAD -->
 <head>
 <meta charset="utf-8"/>
-<title>SupperBuddy - Order Details</title>
+<title>SupperBuddy - Order View</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="" name="description"/>
@@ -831,7 +831,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			Order <small>Create Order</small>
+			Order <small>All Order</small>
 			</h3>
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
@@ -841,7 +841,7 @@ License: You must have a valid license purchased only from themeforest(the above
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="#">Order</a>
+						<a href="#">Order List</a>
 					</li>
 				</ul>
 			</div>
@@ -858,137 +858,19 @@ License: You must have a valid license purchased only from themeforest(the above
 								<ul class="nav nav-tabs nav-tabs-lg">
 									<li class="active">
 										<a href="#tab_1" data-toggle="tab">
-										Order </a>
+										Order List</a>
 									</li>
 								</ul>
 								<div class="tab-content">
 									<div class="tab-pane active" id="tab_1">
-										<div class="row">
-											<div class="col-md-12 col-sm-12">
-												<div class="portlet blue-hoki box">
-													<div class="portlet-title">
-														<div class="caption">
-															<i class="fa fa-cogs"></i>Initiator Information
-														</div>
-													</div>
-													<div class="portlet-body">
-														<div class="row static-info">
-															<div class="col-md-2 name">
-																 Name:
-															</div>
-															<div class="col-md-7 value">
-																 Calvin
-															</div>
-														</div>
-														<div class="row static-info">
-															<div class="col-md-2 name">
-																 Student ID:
-															</div>
-															<div class="col-md-7 value">
-																 A0123456F
-															</div>
-														</div>
-														<div class="row static-info">
-															<div class="col-md-2 name">
-																 Email:
-															</div>
-															<div class="col-md-7 value">
-																 jhon@doe.com
-															</div>
-														</div>
-														<div class="row static-info">	
-															<div class="col-md-2 name">
-																 Phone Number:
-															</div>
-															<div class="col-md-7 value">
-																 12234389
-															</div>
-														</div>
-														<div class="row static-info">
-															<div class="col-md-2 name">
-																 Residence:
-															</div>
-															<div class="col-md-7 value">
-																 Raffle
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<!--Start Caterer-->
-										<div class="row">
-											<div class="col-md-12 col-sm-12">
-												<div class="portlet green-meadow box">
-													<div class="portlet-title">
-														<div class="caption">
-															<i class="fa fa-cogs"></i>Caterer
-														</div>
-													</div>
-													<div class="portlet-body">
-														<div class="row static-info">
-															<div class="col-md-2 name">
-																 Order ID:
-															</div>
-															<div class="col-md-7 value">
-																 Order1
-															</div>
-														</div>
-														<div class="row static-info">
-															<div class="col-md-2 name">
-																 Caterer:
-															</div>
-															<div class="col-md-7 value">
-																 MAC
-															</div>
-														</div>
-														
-														<div class="row static-info">
-															<div class="col-md-2 name">
-																 Email:
-															</div>
-															<div class="col-md-7 value">
-																 Gan@gmail.com 
-															</div>
-														</div>
-														<div class="row static-info">
-															<div class="col-md-2 name">
-																 Phone Number:
-															</div>
-															<div class="col-md-7 value">
-																 98765432
-															</div>
-														</div>
-														<div class="row static-info">
-															<div class="col-md-2 name">
-																 Description:
-															</div>
-															<div class="col-md-7 value">
-																 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam sit nonummy nibh euismod tincidunt ut laoreet dolore magna aliquarm erat sit volutpat. Nostrud exerci tation ullamcorper suscipit lobortis nisl aliquip commodo consequat.
-
-																 Duis autem vel eum iriure dolor vulputate velit esse molestie at dolore. 
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											
-										</div>
-										<!--End Caterer-->
-										<!--Start subOrder-->
-										
+										<!--Start Order List-->
 										<div class="row">
 											<div class="col-md-12 col-sm-12">
 												<div class="portlet yellow-crusta box">
 													<div class="portlet-title">
 														<div class="caption">
-															<i class="fa fa-cogs"></i>Sub Order
+															<i class="fa fa-cogs"></i>Order
 														</div>
-														<div class="actions">
-															<a href="#" class="btn btn-success btn-sm">
-															<i class="fa fa-pencil"></i> Place Order </a>
-														</div>
-
 													</div>
 													<div class="portlet-body">
 														<div class="table-responsive">
@@ -996,19 +878,25 @@ License: You must have a valid license purchased only from themeforest(the above
 															<thead>
 															<tr>
 																<th>
-																	 SubOrder ID
+																	 Order ID
 																</th>
 																<th>
-																	 Created by
+																	 Caterer
+																</th>
+																<th>
+																	 Initated by
+																</th>
+																<th>
+																	 Residence
+																</th>
+																<th>
+																	 Created at
 																</th>
 																<th>
 																	 Updated at
 																</th>
 																<th>
-																	 Paid
-																</th>
-																<th>
-																	 Total Price
+																	 Status
 																</th>
 															</tr>
 															</thead>
@@ -1016,22 +904,79 @@ License: You must have a valid license purchased only from themeforest(the above
 															<tr>
 																<td>
 																	<a href="#">
-																	SubOrder 1 </a>
+																	#Order1 </a>
 																</td>
 																<td>
-																	David
+																	Uncle Gan
 																</td>
 																<td>
-																	20:30
+																	Calvin
 																</td>
 																<td>
-																	$0.00
+																	Raffle
 																</td>
 																<td>
-																	$10.00
+																	27/10/2014 20:30
+																</td>
+																<td>
+																	27/10/2014 20:31
+																</td>
+																<td>
+																	Open
 																</td>
 																
-															</tr>															
+															</tr>
+															<tr>
+																<td>
+																	<a href="#">
+																	#Order2 </a>
+																</td>
+																<td>
+																	MAC
+																</td>
+																<td>
+																	POH
+																</td>
+																<td>
+																	Raffle
+																</td>
+																<td>
+																	27/10/2014 20:30
+																</td>
+																<td>
+																	27/10/2014 20:31
+																</td>
+																<td>
+																	Open
+																</td>
+																
+															</tr>
+															<tr>
+																<td>
+																	<a href="#">
+																	#Order3 </a>
+																</td>
+																<td>
+																	KFC
+																</td>
+																<td>
+																	DAVID
+																</td>
+																<td>
+																	Raffle
+																</td>
+																<td>
+																	27/10/2014 20:30
+																</td>
+																<td>
+																	27/10/2014 20:31
+																</td>
+																<td>
+																	Open
+																</td>
+																
+															</tr>
+															
 															</tbody>
 															</table>
 														</div>
@@ -1042,7 +987,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</div>
 											
 										</div>
-										<!--End subOrder-->
+										<!--End Order List-->
 									</div>
 								</div>
 							</div>

@@ -27,9 +27,6 @@ class Student extends CI_Controller {
 		$query = $this->db->query('SELECT * FROM student WHERE matric_no = "' . $this->input->post('usenetid') . '" LIMIT 1');
 		$user = $query->row();
 
-		$hashed = $user->password;
-		$password = $this->input->post('password');
-
 		if ($user != null) {
 		    echo 'logged in';
 		} else {
