@@ -14,6 +14,7 @@ class Order extends CI_Controller {
 
 	public function create()
 	{
+		$sql = "INSERT INTO `order` (caterer_id, status, created_by, created_at, updated_at) VALUES (?, ?, ?, ?, ?)";
 		$this->load->view('order_create');
 	}
 
