@@ -7,7 +7,11 @@
 <!-- BEGIN HEAD -->
 <head>
 <meta charset="utf-8"/>
-<title>SupperBuddy - Order Create</title>
+<title>SupperBuddy - SubOrder</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="" name="description"/>
+<meta content="" name="author"/>
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
 <link href="/public/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
@@ -35,6 +39,7 @@
 		margin-left: 0px;
 	}
 </style>
+
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
@@ -446,11 +451,9 @@
 </div>
 <!-- BEGIN CONTAINER -->
 <div class="page-container">
-	
 	<!-- BEGIN CONTENT -->
 	<div class="page-content-wrapper">
 		<div class="page-content">
-			
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
 			Order <small>Create Order</small>
@@ -474,7 +477,6 @@
 					<!-- Begin: life time stats -->
 					<div class="portlet">
 						<div class="portlet-title">
-							
 						</div>
 						<div class="portlet-body">
 							<div class="tabbable">
@@ -491,11 +493,7 @@
 												<div class="portlet blue-hoki box">
 													<div class="portlet-title">
 														<div class="caption">
-															<i class="fa fa-cogs"></i>Student Information
-														</div>
-														<div class="actions">
-															<a href="#" class="btn btn-default btn-sm">
-															<i class="fa fa-pencil"></i> Edit </a>
+															<i class="fa fa-cogs"></i>Initiator Information
 														</div>
 													</div>
 													<div class="portlet-body">
@@ -504,7 +502,7 @@
 																 Name:
 															</div>
 															<div class="col-md-7 value">
-																 Jhon Doe
+																 Calvin
 															</div>
 														</div>
 														<div class="row static-info">
@@ -523,12 +521,20 @@
 																 jhon@doe.com
 															</div>
 														</div>
-														<div class="row static-info">
+														<div class="row static-info">	
 															<div class="col-md-2 name">
 																 Phone Number:
 															</div>
 															<div class="col-md-7 value">
 																 12234389
+															</div>
+														</div>
+														<div class="row static-info">
+															<div class="col-md-2 name">
+																 Residence:
+															</div>
+															<div class="col-md-7 value">
+																 Raffle
 															</div>
 														</div>
 													</div>
@@ -547,17 +553,18 @@
 													<div class="portlet-body">
 														<div class="row static-info">
 															<div class="col-md-2 name">
+																 Order ID:
+															</div>
+															<div class="col-md-7 value">
+																 Order1
+															</div>
+														</div>
+														<div class="row static-info">
+															<div class="col-md-2 name">
 																 Caterer:
 															</div>
 															<div class="col-md-7 value">
-																 <div class="form-group">
-																		<select class="form-control input-large select2me" data-placeholder="Select...">
-																			<option value=""></option>
-																			<option value="#">Uncle Gan</option>
-																			<option value="#">Uncle Tan</option>
-																			<option value="#">Mac</option>
-																		</select>
-																</div>
+																 MAC
 															</div>
 														</div>
 														
@@ -587,22 +594,80 @@
 																 Duis autem vel eum iriure dolor vulputate velit esse molestie at dolore. 
 															</div>
 														</div>
-														<div class="row static-info">
-															<div class="col-md-2 name">
-																 
-															</div>
-															<div class="col-md-7 value">
-																 <button type="button" class="btn default">Create Order</button>
-
-															</div>
-														</div>
-
 													</div>
 												</div>
 											</div>
 											
 										</div>
 										<!--End Caterer-->
+										<!--Start subOrder-->
+										
+										<div class="row">
+											<div class="col-md-12 col-sm-12">
+												<div class="portlet yellow-crusta box">
+													<div class="portlet-title">
+														<div class="caption">
+															<i class="fa fa-cogs"></i>Sub Order
+														</div>
+														<div class="actions">
+															<a href="#" class="btn btn-success btn-sm">
+															<i class="fa fa-pencil"></i> Place Order </a>
+														</div>
+
+													</div>
+													<div class="portlet-body">
+														<div class="table-responsive">
+															<table class="table table-hover table-bordered table-striped">
+															<thead>
+															<tr>
+																<th>
+																	 SubOrder ID
+																</th>
+																<th>
+																	 Created by
+																</th>
+																<th>
+																	 Updated at
+																</th>
+																<th>
+																	 Paid
+																</th>
+																<th>
+																	 Total Price
+																</th>
+															</tr>
+															</thead>
+															<tbody>
+															<tr>
+																<td>
+																	<a href="#">
+																	SubOrder 1 </a>
+																</td>
+																<td>
+																	David
+																</td>
+																<td>
+																	20:30
+																</td>
+																<td>
+																	$0.00
+																</td>
+																<td>
+																	$10.00
+																</td>
+																
+															</tr>															
+															</tbody>
+															</table>
+														</div>
+														
+														
+													</div>
+												</div>
+											</div>
+											
+										</div>
+										<!--End subOrder-->
 									</div>
 								</div>
 							</div>

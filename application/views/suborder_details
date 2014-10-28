@@ -7,7 +7,11 @@
 <!-- BEGIN HEAD -->
 <head>
 <meta charset="utf-8"/>
-<title>SupperBuddy - Order Create</title>
+<title>SupperBuddy - SubOrder Details</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="" name="description"/>
+<meta content="" name="author"/>
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
 <link href="/public/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
@@ -35,6 +39,7 @@
 		margin-left: 0px;
 	}
 </style>
+
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
@@ -43,7 +48,7 @@
 <div class="page-header navbar navbar-fixed-top">
 	<!-- BEGIN HEADER INNER -->
 	<div class="page-header-inner">
-		<!-- BEGIN LOGO -->
+	    <!-- BEGIN LOGO -->
 		<div class="page-logo">
 			<a href="index.html">
 			<img src="/public/img/logo.png" alt="logo" class="logo-default"/>
@@ -446,14 +451,34 @@
 </div>
 <!-- BEGIN CONTAINER -->
 <div class="page-container">
-	
 	<!-- BEGIN CONTENT -->
 	<div class="page-content-wrapper">
 		<div class="page-content">
-			
+			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			<div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+							<h4 class="modal-title">Modal title</h4>
+						</div>
+						<div class="modal-body">
+							 Widget settings form goes here
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn blue">Save changes</button>
+							<button type="button" class="btn default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+					<!-- /.modal-content -->
+				</div>
+				<!-- /.modal-dialog -->
+			</div>
+			<!-- /.modal -->
+			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			Order <small>Create Order</small>
+			Order <small>Place Order</small>
 			</h3>
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
@@ -463,7 +488,7 @@
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="#">Order</a>
+						<a href="#">Place Order</a>
 					</li>
 				</ul>
 			</div>
@@ -474,135 +499,136 @@
 					<!-- Begin: life time stats -->
 					<div class="portlet">
 						<div class="portlet-title">
-							
 						</div>
 						<div class="portlet-body">
 							<div class="tabbable">
 								<ul class="nav nav-tabs nav-tabs-lg">
 									<li class="active">
 										<a href="#tab_1" data-toggle="tab">
-										Order </a>
+										Place Order </a>
 									</li>
 								</ul>
 								<div class="tab-content">
 									<div class="tab-pane active" id="tab_1">
+										<!--Start subOrder-->
 										<div class="row">
 											<div class="col-md-12 col-sm-12">
-												<div class="portlet blue-hoki box">
+												<div class="portlet yellow-crusta box">
 													<div class="portlet-title">
 														<div class="caption">
-															<i class="fa fa-cogs"></i>Student Information
-														</div>
-														<div class="actions">
-															<a href="#" class="btn btn-default btn-sm">
-															<i class="fa fa-pencil"></i> Edit </a>
+															<i class="fa fa-cogs"></i>Sub Order Details
 														</div>
 													</div>
 													<div class="portlet-body">
-														<div class="row static-info">
-															<div class="col-md-2 name">
-																 Name:
-															</div>
-															<div class="col-md-7 value">
-																 Jhon Doe
-															</div>
-														</div>
-														<div class="row static-info">
-															<div class="col-md-2 name">
-																 Student ID:
-															</div>
-															<div class="col-md-7 value">
-																 A0123456F
-															</div>
-														</div>
-														<div class="row static-info">
-															<div class="col-md-2 name">
-																 Email:
-															</div>
-															<div class="col-md-7 value">
-																 jhon@doe.com
-															</div>
-														</div>
-														<div class="row static-info">
-															<div class="col-md-2 name">
-																 Phone Number:
-															</div>
-															<div class="col-md-7 value">
-																 12234389
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<!--Start Caterer-->
-										<div class="row">
-											<div class="col-md-12 col-sm-12">
-												<div class="portlet green-meadow box">
-													<div class="portlet-title">
-														<div class="caption">
-															<i class="fa fa-cogs"></i>Caterer
-														</div>
-													</div>
-													<div class="portlet-body">
-														<div class="row static-info">
-															<div class="col-md-2 name">
-																 Caterer:
-															</div>
-															<div class="col-md-7 value">
-																 <div class="form-group">
-																		<select class="form-control input-large select2me" data-placeholder="Select...">
-																			<option value=""></option>
-																			<option value="#">Uncle Gan</option>
-																			<option value="#">Uncle Tan</option>
-																			<option value="#">Mac</option>
-																		</select>
+													<!-- BEGIN PAGE CONTENT-->
+													<div class="row">
+														<div class="col-md-12">
+															<!-- Begin: life time stats -->
+															<div class="portlet">
+																<div class="portlet-body">
+																	<div class="table-container">
+																		<table class="table table-striped table-bordered table-hover" id="datatable_products">
+																		<thead>
+																		<tr role="row" class="heading">
+																			<th width="10%">
+																				 ID
+																			</th>
+																			<th width="15%">
+																				 Food
+																			</th>
+																			<th width="15%">
+																				 Price
+																			</th>
+																			<th width="10%">
+																				 Quantity
+																			</th>
+																			<th width="15%">
+																				 Created at
+																			</th>
+																			<th width="10%">
+																				 Actions
+																			</th>
+																		</tr>
+																		<tr role="row" class="filter">
+																			<td>
+																				1
+																			</td>
+																			<td>
+																				<select class="form-control input-large select2me" data-placeholder="Select...">
+																					<option value=""></option>
+																					<option value="#">Chicken Rice</option>
+																					<option value="#">Fish Burger</option>
+																					<option value="#">Beef Burger</option>
+																				</select>
+																			</td>
+																			<td>
+																				$5.00
+																			</td>
+																			<td>
+																				<div class="margin-bottom-5">
+																					<input type="text" class="form-control form-filter input-sm" name="quantity" placeholder="QTY"/>
+																				</div>
+																				
+																			</td>
+																			<td>
+																				27/10/2014 23:59
+																			</td>
+																			<td>
+																				
+																					<button class="btn btn-sm yellow filter-submit margin-bottom"><i class="fa fa-submit"></i> Add</button>
+																			
+																				<button class="btn btn-sm red filter-cancel"><i class="fa fa-times"></i> Remove</button>
+																			</td>
+																		</tr>
+																		<tr role="row" class="filter">
+																			<td>
+																				2
+																			</td>
+																			<td>
+																				<select class="form-control input-large select2me" data-placeholder="Select...">
+																					<option value=""></option>
+																					<option value="#">Chicken Rice</option>
+																					<option value="#">Fish Burger</option>
+																					<option value="#">Beef Burger</option>
+																				</select>
+																			</td>
+																			<td>
+																				$5.00
+																			</td>
+																			<td>
+																				<div class="margin-bottom-5">
+																					<input type="text" class="form-control form-filter input-sm" name="quantity" placeholder="QTY"/>
+																				</div>
+																				
+																			</td>
+																			<td>
+																				27/10/2014 23:59
+																			</td>
+																			<td>
+																				
+																					<button class="btn btn-sm yellow filter-submit margin-bottom"><i class="fa fa-submit"></i> Add</button>
+																			
+																				<button class="btn btn-sm red filter-cancel"><i class="fa fa-times"></i> Remove</button>
+																			</td>
+																		</tr>
+																		</thead>
+																		<tbody>
+																		</tbody>
+																		</table>
+																	</div>
 																</div>
 															</div>
+															<!-- End: life time stats -->
 														</div>
-														
-														<div class="row static-info">
-															<div class="col-md-2 name">
-																 Email:
-															</div>
-															<div class="col-md-7 value">
-																 Gan@gmail.com 
-															</div>
-														</div>
-														<div class="row static-info">
-															<div class="col-md-2 name">
-																 Phone Number:
-															</div>
-															<div class="col-md-7 value">
-																 98765432
-															</div>
-														</div>
-														<div class="row static-info">
-															<div class="col-md-2 name">
-																 Description:
-															</div>
-															<div class="col-md-7 value">
-																 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam sit nonummy nibh euismod tincidunt ut laoreet dolore magna aliquarm erat sit volutpat. Nostrud exerci tation ullamcorper suscipit lobortis nisl aliquip commodo consequat.
-
-																 Duis autem vel eum iriure dolor vulputate velit esse molestie at dolore. 
-															</div>
-														</div>
-														<div class="row static-info">
-															<div class="col-md-2 name">
-																 
-															</div>
-															<div class="col-md-7 value">
-																 <button type="button" class="btn default">Create Order</button>
-
-															</div>
-														</div>
+													</div>
+													<!-- END PAGE CONTENT-->
 
 													</div>
 												</div>
 											</div>
 											
 										</div>
-										<!--End Caterer-->
+										<!--End subOrder-->
 									</div>
 								</div>
 							</div>

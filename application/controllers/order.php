@@ -18,6 +18,16 @@ class Order extends CI_Controller {
 		$this->load->view('order_create');
 	}
 
+	public function suborder()
+	{
+		$this->load->view('suborder');
+	}
+
+	public function details()
+	{
+		$this->load->view('suborder_details');
+	}
+
 }
 
 /* End of file order.php */
