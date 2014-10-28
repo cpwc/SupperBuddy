@@ -483,28 +483,6 @@
 	<!-- BEGIN CONTENT -->
 	<div class="page-content-wrapper">
 		<div class="page-content">
-			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-			<div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-							<h4 class="modal-title">Modal title</h4>
-						</div>
-						<div class="modal-body">
-							 Widget settings form goes here
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn blue">Save changes</button>
-							<button type="button" class="btn default" data-dismiss="modal">Close</button>
-						</div>
-					</div>
-					<!-- /.modal-content -->
-				</div>
-				<!-- /.modal-dialog -->
-			</div>
-			<!-- /.modal -->
-			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
 			Order <small>All Order</small>
@@ -523,66 +501,65 @@
 			</div>
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN PAGE CONTENT-->
-										<!--Start Order List-->
-										<div class="row">
-											<div class="col-md-12 col-sm-12">
-												<div class="portlet yellow-crusta box">
-													<div class="portlet-title">
-														<div class="caption">
-															<i class="fa fa-cogs"></i>Order
-														</div>
-													</div>
-													<div class="portlet-body">
-														<div class="table-responsive">
-															<table class="table table-hover table-bordered table-striped">
-															<thead>
-															<tr>
-																<th>
-																	 Order ID
-																</th>
-																<th>
-																	 Caterer
-																</th>
-																<th>
-																	 Initated by
-																</th>
-																<th>
-																	 Residence
-																</th>
-																<th>
-																	 Created at
-																</th>
-																<th>
-																	 Updated at
-																</th>
-																<th>
-																	 Status
-																</th>
-															</tr>
-															</thead>
-															<tbody>
-																<?php foreach ($orders as $order) { ?>
-																<tr>
-																	<td><?php echo $order->id; ?></td>
-																	<td><?php echo $order->caterer_name; ?></td>
-																	<td><?php echo $order->student_name; ?></td>
-																	<td><?php echo $order->residence_name; ?></td>
-																	<td><?php echo $order->created_at; ?></td>
-																	<td><?php echo $order->updated_at; ?></td>
-																	<td><?php echo $order->status; ?></td>
-																</tr>
-																<?php } ?>
-															</tbody>
-															</table>
-														</div>
-														
-														
-													</div>
-												</div>
-											</div>
-											
-										</div>
-										<!--End Order List-->
+			<!--Start Order List-->
+			<div class="row">
+				<div class="col-md-12 col-sm-12">
+					<div class="portlet yellow-crusta box">
+						<div class="portlet-title">
+							<div class="caption">
+								<i class="fa fa-cogs"></i>Order
+							</div>
+						</div>
+						<div class="portlet-body">
+							<div class="table-responsive">
+								<table class="table table-hover table-bordered table-striped">
+								<thead>
+								<tr>
+									<th>
+										 Order ID
+									</th>
+									<th>
+										 Caterer
+									</th>
+									<th>
+										 Initated by
+									</th>
+									<th>
+										 Residence
+									</th>
+									<th>
+										 Created at
+									</th>
+									<th>
+										 Updated at
+									</th>
+									<th>
+										 Status
+									</th>
+								</tr>
+								</thead>
+								<tbody>
+									<?php foreach ($orders as $order) { ?>
+									<tr>
+										<td><?php echo $order->id; ?></td>
+										<td><?php echo $order->caterer_name; ?></td>
+										<td><?php echo $order->student_name; ?></td>
+										<td><?php echo $order->residence_name; ?></td>
+										<td><?php echo $order->created_at; ?></td>
+										<td><?php echo $order->updated_at; ?></td>
+										<td><?php echo $order->status; ?></td>
+									</tr>
+									<?php } ?>
+								</tbody>
+								</table>
+							</div>
+							
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--End Order List-->
 			<!-- END PAGE CONTENT-->
 		</div>
 	</div>
@@ -628,19 +605,12 @@
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="/public/scripts/metronic.js" type="text/javascript"></script>
-<script src="/public/scripts/layout.js" type="text/javascript"></script>
-<script src="/public/scripts/demo.js" type="text/javascript"></script>
-<script src="/public/scripts/datatable.js"></script>
-<script src="/public/pages/scripts/ecommerce-orders-view.js"></script>
-<script src="/public/scripts/form-editable.js"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
-        jQuery(document).ready(function() {    
-           Metronic.init(); // init metronic core components
-			Layout.init(); // init current layout
-			Demo.init(); // init demo features
-        });
-    </script>
+		jQuery(document).ready(function() {    
+			Metronic.init(); // init metronic core components
+		});
+	</script>
 <!-- END JAVASCRIPTS -->
 </body>
 <!-- END BODY -->
