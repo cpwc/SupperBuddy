@@ -103,7 +103,7 @@
 			Sign Up <i class="m-icon-swapright m-icon-white"></i>
 			</button>
 		</div>
-	</form>
+	<?php echo form_close(); ?>
 	<!-- END REGISTRATION FORM -->
 </div>
 <!-- END LOGIN -->

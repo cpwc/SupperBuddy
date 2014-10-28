@@ -14,8 +14,26 @@ class Order extends CI_Controller {
 
 	public function create()
 	{
-		$sql = "INSERT INTO `order` (caterer_id, status, created_by, created_at, updated_at) VALUES (?, ?, ?, ?, ?)";
-		$this->load->view('order_create');
+		if ($this->input->server('REQUEST_METHOD') == 'POST') {
+			$this->form_validation->set_rules('matric_no', 'Student ID', 'required');
+			$this->form_validation->set_rules('caterer', 'Caterer', 'required');
+
+			if ($this->form_validation->run() == FALSE) {
+				redirect('/order/create'); // TODO: Show validation message.
+			} else {
+				$this->_create_order();
+			}
+		} else {
+			$sql = "SELECT student.name as student_name, matric_no, email, residence.name as residence_name FROM `student`, `residence` WHERE student.residence_id = residence.id LIMIT 1"; // TODO: Select the particular student currently logged in as.
+			$student = $this->db->query($sql);
+			$data['student'] = $student->row();
+
+			$sql = "SELECT * FROM `caterer`";
+			$caterers = $this->db->query($sql);
+			$data['caterers'] = $caterers->result();
+
+			$this->load->view('order_create', $data);
+		}
 	}
 
 	public function suborder()
@@ -26,6 +44,22 @@ class Order extends CI_Controller {
 	public function details()
 	{
 		$this->load->view('suborder_details');
+	}
+
+	private function _create_order()
+	{
+		$sql = "INSERT INTO `order` (caterer_id, status, created_by, created_at, updated_at) VALUES (?, ?, ?, ?, ?)";
+		$time = date('Y-m-d H:i:s');
+		$params = array(
+			'caterer_id' => $this->input->post('caterer'),
+			'status' => 'OPEN',
+			'created_by' => $this->input->post('matric_no'),
+			'created_at' => $time,
+			'updated_at' => $time
+		);
+		$this->db->query($sql, $params);
+		
+		echo $this->db->affected_rows();
 	}
 
 }

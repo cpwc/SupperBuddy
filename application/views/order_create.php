@@ -8,6 +8,10 @@
 <head>
 <meta charset="utf-8"/>
 <title>SupperBuddy - Order Create</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="" name="description"/>
+<meta content="" name="author"/>
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
 <link href="/public/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
@@ -30,15 +34,10 @@
 <link href="/public/css/custom.css" rel="stylesheet" type="text/css"/>
 <!-- END THEME STYLES -->
 <link rel="shortcut icon" href="favicon.ico"/>
-<style type="text/css">
-	.page-content-wrapper .page-content {
-		margin-left: 0px;
-	}
-</style>
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
-<body class="page-header-fixed page-quick-sidebar-over-content ">
+<body class="page-header-fixed page-full-width page-footer-fixed">
 <!-- BEGIN HEADER -->
 <div class="page-header navbar navbar-fixed-top">
 	<!-- BEGIN HEADER INNER -->
@@ -50,10 +49,6 @@
 			</a>
 		</div>
 		<!-- END LOGO -->
-		<!-- BEGIN RESPONSIVE MENU TOGGLER -->
-		<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
-		</a>
-		<!-- END RESPONSIVE MENU TOGGLER -->
 		<!-- BEGIN HORIZANTAL MENU -->
 		<!-- DOC: Apply "hor-menu-light" class after the "hor-menu" class below to have a horizontal menu with white background -->
 		<!-- DOC: This is desktop version of the horizontal menu. The mobile version is defined(duplicated) sidebar menu below. So the horizontal menu has 2 seperate versions -->
@@ -425,16 +420,55 @@
 			</ul>
 		</div>
 		<!-- END HORIZANTAL MENU -->
+		<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+		<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+		</a>
+		<!-- END RESPONSIVE MENU TOGGLER -->
 		<!-- BEGIN TOP NAVIGATION MENU -->
 		<div class="top-menu">
-			<ul class="nav navbar-nav pull-right">				
-				<!-- BEGIN QUICK SIDEBAR TOGGLER -->
-				<li class="dropdown dropdown-quick-sidebar-toggler">
-					<a href="javascript:;" class="dropdown-toggle">
-					<i class="icon-logout"></i>
+			<ul class="nav navbar-nav pull-right">
+				<!-- BEGIN USER LOGIN DROPDOWN -->
+				<li class="dropdown dropdown-user">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+					<img alt="" class="img-circle" src="../../assets/admin/layout/img/avatar3_small.jpg"/>
+					<span class="username username-hide-on-mobile">
+					Bob </span>
+					<i class="fa fa-angle-down"></i>
 					</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="extra_profile.html">
+							<i class="icon-user"></i> My Profile </a>
+						</li>
+						<li>
+							<a href="page_calendar.html">
+							<i class="icon-calendar"></i> My Calendar </a>
+						</li>
+						<li>
+							<a href="inbox.html">
+							<i class="icon-envelope-open"></i> My Inbox <span class="badge badge-danger">
+							3 </span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+							<i class="icon-rocket"></i> My Tasks <span class="badge badge-success">
+							7 </span>
+							</a>
+						</li>
+						<li class="divider">
+						</li>
+						<li>
+							<a href="extra_lock.html">
+							<i class="icon-lock"></i> Lock Screen </a>
+						</li>
+						<li>
+							<a href="login.html">
+							<i class="icon-key"></i> Log Out </a>
+						</li>
+					</ul>
 				</li>
-				<!-- END QUICK SIDEBAR TOGGLER -->
+				<!-- END USER LOGIN DROPDOWN -->
 			</ul>
 		</div>
 		<!-- END TOP NAVIGATION MENU -->
@@ -446,11 +480,9 @@
 </div>
 <!-- BEGIN CONTAINER -->
 <div class="page-container">
-	
 	<!-- BEGIN CONTENT -->
 	<div class="page-content-wrapper">
 		<div class="page-content">
-			
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
 			Order <small>Create Order</small>
@@ -463,155 +495,121 @@
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="#">Order</a>
+						<a href="index.html">Order</a>
+						<i class="fa fa-angle-right"></i>
+					</li>
+					<li>
+						<a href="#">Create</a>
 					</li>
 				</ul>
 			</div>
 			<!-- END PAGE HEADER-->
-			<!-- BEGIN PAGE CONTENT-->
-			<div class="row">
-				<div class="col-md-12">
-					<!-- Begin: life time stats -->
-					<div class="portlet">
-						<div class="portlet-title">
-							
-						</div>
-						<div class="portlet-body">
-							<div class="tabbable">
-								<ul class="nav nav-tabs nav-tabs-lg">
-									<li class="active">
-										<a href="#tab_1" data-toggle="tab">
-										Order </a>
-									</li>
-								</ul>
-								<div class="tab-content">
-									<div class="tab-pane active" id="tab_1">
-										<div class="row">
-											<div class="col-md-12 col-sm-12">
-												<div class="portlet blue-hoki box">
-													<div class="portlet-title">
-														<div class="caption">
-															<i class="fa fa-cogs"></i>Student Information
-														</div>
-														<div class="actions">
-															<a href="#" class="btn btn-default btn-sm">
-															<i class="fa fa-pencil"></i> Edit </a>
-														</div>
-													</div>
-													<div class="portlet-body">
-														<div class="row static-info">
-															<div class="col-md-2 name">
-																 Name:
-															</div>
-															<div class="col-md-7 value">
-																 Jhon Doe
-															</div>
-														</div>
-														<div class="row static-info">
-															<div class="col-md-2 name">
-																 Student ID:
-															</div>
-															<div class="col-md-7 value">
-																 A0123456F
-															</div>
-														</div>
-														<div class="row static-info">
-															<div class="col-md-2 name">
-																 Email:
-															</div>
-															<div class="col-md-7 value">
-																 jhon@doe.com
-															</div>
-														</div>
-														<div class="row static-info">
-															<div class="col-md-2 name">
-																 Phone Number:
-															</div>
-															<div class="col-md-7 value">
-																 12234389
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<!--Start Caterer-->
-										<div class="row">
-											<div class="col-md-12 col-sm-12">
-												<div class="portlet green-meadow box">
-													<div class="portlet-title">
-														<div class="caption">
-															<i class="fa fa-cogs"></i>Caterer
-														</div>
-													</div>
-													<div class="portlet-body">
-														<div class="row static-info">
-															<div class="col-md-2 name">
-																 Caterer:
-															</div>
-															<div class="col-md-7 value">
-																 <div class="form-group">
-																		<select class="form-control input-large select2me" data-placeholder="Select...">
-																			<option value=""></option>
-																			<option value="#">Uncle Gan</option>
-																			<option value="#">Uncle Tan</option>
-																			<option value="#">Mac</option>
-																		</select>
-																</div>
-															</div>
-														</div>
-														
-														<div class="row static-info">
-															<div class="col-md-2 name">
-																 Email:
-															</div>
-															<div class="col-md-7 value">
-																 Gan@gmail.com 
-															</div>
-														</div>
-														<div class="row static-info">
-															<div class="col-md-2 name">
-																 Phone Number:
-															</div>
-															<div class="col-md-7 value">
-																 98765432
-															</div>
-														</div>
-														<div class="row static-info">
-															<div class="col-md-2 name">
-																 Description:
-															</div>
-															<div class="col-md-7 value">
-																 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam sit nonummy nibh euismod tincidunt ut laoreet dolore magna aliquarm erat sit volutpat. Nostrud exerci tation ullamcorper suscipit lobortis nisl aliquip commodo consequat.
-
-																 Duis autem vel eum iriure dolor vulputate velit esse molestie at dolore. 
-															</div>
-														</div>
-														<div class="row static-info">
-															<div class="col-md-2 name">
-																 
-															</div>
-															<div class="col-md-7 value">
-																 <button type="button" class="btn default">Create Order</button>
-
-															</div>
-														</div>
-
-													</div>
-												</div>
-											</div>
-											
-										</div>
-										<!--End Caterer-->
+			<?php echo form_open('order/create'); ?>
+				<!-- BEGIN PAGE CONTENT-->
+				<div class="row">
+					<div class="col-md-12 col-sm-12">
+						<div class="portlet blue-hoki box">
+							<div class="portlet-title">
+								<div class="caption">
+									<i class="fa fa-cogs"></i>Student Information
+								</div>
+							</div>
+							<div class="portlet-body">
+								<div class="row static-info">
+									<div class="col-md-2 name">
+										 Name:
+									</div>
+									<div class="col-md-7 value">
+										 <?php echo $student->student_name; ?>
+									</div>
+								</div>
+								<div class="row static-info">
+									<div class="col-md-2 name">
+										 Student ID:
+									</div>
+									<div class="col-md-7 value">
+										 <?php echo $student->matric_no; ?>
+									</div>
+								</div>
+								<div class="row static-info">
+									<div class="col-md-2 name">
+										 Email:
+									</div>
+									<div class="col-md-7 value">
+										 <?php echo $student->email; ?>
+									</div>
+								</div>
+								<div class="row static-info">
+									<div class="col-md-2 name">
+										 Residence:
+									</div>
+									<div class="col-md-7 value">
+										 <?php echo $student->residence_name; ?>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<!-- End: life time stats -->
 				</div>
-			</div>
-			<!-- END PAGE CONTENT-->
+				<!--Start Caterer-->
+				<div class="row">
+					<div class="col-md-12 col-sm-12">
+						<div class="portlet green-meadow box">
+							<div class="portlet-title">
+								<div class="caption">
+									<i class="fa fa-cogs"></i>Caterer
+								</div>
+							</div>
+							<div class="portlet-body">
+								<div class="row static-info">
+									<div class="col-md-2 name">
+										 Caterer:
+									</div>
+									<div class="col-md-7 value">
+										 <div class="form-group">
+												<select id="caterer" name="caterer" class="form-control input-large select2me" data-placeholder="Select...">
+													<option value=""></option>
+													<?php foreach ($caterers as $caterer) { ?>
+													<option value="<?php echo $caterer->id; ?>"><?php echo $caterer->name; ?></option>
+													<?php } ?>
+												</select>
+										</div>
+									</div>
+								</div>
+								
+								<div id="caterer-details">
+									<div class="row static-info">
+										<div class="col-md-2 name">
+											 Email:
+										</div>
+										<div id="caterer-email" class="col-md-7 value">
+										</div>
+									</div>
+									<div class="row static-info">
+										<div class="col-md-2 name">
+											 Address:
+										</div>
+										<div id="caterer-address" class="col-md-7 value">
+										</div>
+									</div>
+									<div class="row static-info">
+										<div class="col-md-2 name">
+											 
+										</div>
+										<div class="col-md-7 value">
+											 <input type="submit" class="btn default" value="Create Order">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--End Caterer-->
+				<!-- END PAGE CONTENT-->
+				<input type="hidden" name="matric_no" value="<?php echo $student->matric_no; ?>">
+				<!-- <input type="hidden" name="caterer_id" value="" id="caterer-id"> -->
+			<?php echo form_close(); ?>
 		</div>
 	</div>
 	<!-- END CONTENT -->
@@ -620,7 +618,7 @@
 <!-- BEGIN FOOTER -->
 <div class="page-footer">
 	<div class="page-footer-inner">
-		 2014 &copy; NUS supperbuddy.
+		 2014 &copy; NUSSupperBuddy.
 	</div>
 	<div class="page-footer-tools">
 		<span class="go-top">
@@ -632,8 +630,8 @@
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
 <!-- BEGIN CORE PLUGINS -->
 <!--[if lt IE 9]>
-<script src="../../assets/global/plugins/respond.min.js"></script>
-<script src="../../assets/global/plugins/excanvas.min.js"></script> 
+<script src="/public/plugins/respond.min.js"></script>
+<script src="/public/plugins/excanvas.min.js"></script> 
 <![endif]-->
 <script src="/public/plugins/jquery-1.11.0.min.js" type="text/javascript"></script>
 <script src="/public/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
@@ -656,22 +654,14 @@
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="/public/scripts/metronic.js" type="text/javascript"></script>
-<script src="/public/scripts/layout.js" type="text/javascript"></script>
-<script src="/public/scripts/demo.js" type="text/javascript"></script>
-<script src="/public/scripts/datatable.js"></script>
-<script src="/public/pages/scripts/ecommerce-orders-view.js"></script>
-<script src="/public/scripts/form-editable.js"></script>
+<script src="/public/scripts/order.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
-        jQuery(document).ready(function() {    
-           Metronic.init(); // init metronic core components
-			Layout.init(); // init current layout
-			QuickSidebar.init(); // init quick sidebar
-			Demo.init(); // init demo features
-           EcommerceOrdersView.init();
-           FormEditable.init();
-        });
-    </script>
+		jQuery(document).ready(function() {    
+			Metronic.init(); // init metronic core components
+			Order.init(); // init demo features
+		});
+	</script>
 <!-- END JAVASCRIPTS -->
 </body>
 <!-- END BODY -->
