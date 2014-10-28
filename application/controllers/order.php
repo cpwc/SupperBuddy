@@ -12,6 +12,11 @@ class Order extends CI_Controller {
 		$this->load->view('order_view', $data);
 	}
 
+	public function create()
+	{
+		$this->load->view('order_create');
+	}
+
 }
 
 /* End of file order.php */
