@@ -521,7 +521,7 @@
 									</div>
 									<div class="col-md-7 value">
 										<div class="input-icon right">
-											<input type="text" class="form-control" name="food_name" id="food_name">
+											<input type="text" class="form-control" name="name" id="food_name">
 										</div>
 										<div class="help-block">
 												food name
@@ -535,7 +535,7 @@
 									</div>
 									<div class="col-md-7 value">
 										 <div class="input-icon right">
-											<input type="text" class="form-control" name="food_price" id="food_price">
+											<input type="text" class="form-control" name="price" id="food_price">
 										</div>
 										<div class="help-block">
 												food price
@@ -545,11 +545,10 @@
 								</div>
 								<div class="row static-info">
 									<div class="col-md-2 name">
-										<input type="submit" class="btn default" value="Add Food">
+										
 									</div>
 									<div class="col-md-7 value">
-										
-
+										<input type="submit" class="btn default" value="Add Food">
 									</div>
 								</div>
 							</div>
