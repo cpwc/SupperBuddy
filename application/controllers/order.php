@@ -57,9 +57,9 @@ class Order extends CI_Controller {
 			$this->load->view('suborder', $data);
 	}
 
-	public function suborderdetails()
+	public function suborderdetails($id)
 	{
-		$sql = "SELECT food.name as food_name, food.price as food_price, food.id FROM `food`, `caterer` WHERE food.caterer_id = caterer.id";
+		$sql = "SELECT * FROM `food`, `caterer` WHERE food.caterer_id = " . $id;
 		$food = $this->db->query($sql);
 		$data['foods'] = $food->result();
 

@@ -22,6 +22,27 @@ var Order = function () {
 		});
 	}
 
+	var handleFoodSelect = function() {
+
+		//$("#caterer-details").hide();
+
+		$("select#food").change(function() {
+			$food_id = $(this).val()
+			$.ajax({
+				type: "GET",
+				url: "http://supperbuddy.cpwc.me/index.php/order/suborderdetails/" + $food_id,
+				success: function (data)
+				{
+					//$("#caterer-details").show();
+					// $("#caterer-id").text(data.id);
+					$("#food-price").text(data.price);
+					
+				}
+			});
+		});
+	}
+
+
 	// var handleRegister = function () {
 
 	// 	$('.register-form').validate({

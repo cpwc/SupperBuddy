@@ -561,7 +561,8 @@
 																				</div>
 																			</td>
 																			<td>
-																				 <?php echo $food->food_price; ?>
+																				 <div id="food-price" class="col-md-7 value">
+																				 </div>
 																			</td>
 																			<td>
 																				<div class="margin-bottom-5">
