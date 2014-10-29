@@ -46,7 +46,7 @@ class Order extends CI_Controller {
 			$student = $this->db->query($sql);
 			$data['student'] = $student->row();
 
-			$sql = "SELECT * FROM `caterer` WHERE caterer.id = '" . $order->caterer_id . "' LIMIT 1";
+			$sql = "SELECT * FROM `caterer` WHERE caterer.id = '" . echo $order->caterer_id . "' LIMIT 1";
 			$caterers = $this->db->query($sql);
 			$data['caterers'] = $caterers->row();
 
