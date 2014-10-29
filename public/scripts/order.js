@@ -14,7 +14,9 @@ var Order = function () {
 					$("#caterer-details").show();
 					// $("#caterer-id").text(data.id);
 					$("#caterer-email").text(data.email);
+					$("#caterer-phone").text(data.phone);		
 					$("#caterer-address").text(data.address);
+					$("#caterer-description").text(data.description);
 				}
 			});
 		});

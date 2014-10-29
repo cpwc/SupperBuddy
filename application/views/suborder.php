@@ -471,6 +471,7 @@
 				</ul>
 			</div>
 			<!-- END PAGE HEADER-->
+			<?php echo form_open('order/create'); ?>
 			<!-- BEGIN PAGE CONTENT-->
 			<div class="row">
 				<div class="col-md-12">
@@ -502,7 +503,7 @@
 																 Name:
 															</div>
 															<div class="col-md-7 value">
-																 Calvin
+																 <?php echo $student->student_name; ?>
 															</div>
 														</div>
 														<div class="row static-info">
@@ -510,7 +511,7 @@
 																 Student ID:
 															</div>
 															<div class="col-md-7 value">
-																 A0123456F
+																 <?php echo $student->matric_no; ?>
 															</div>
 														</div>
 														<div class="row static-info">
@@ -518,7 +519,7 @@
 																 Email:
 															</div>
 															<div class="col-md-7 value">
-																 jhon@doe.com
+																 <?php echo $student->email; ?>
 															</div>
 														</div>
 														<div class="row static-info">	
@@ -526,7 +527,7 @@
 																 Phone Number:
 															</div>
 															<div class="col-md-7 value">
-																 12234389
+																<?php echo $student->phone; ?>
 															</div>
 														</div>
 														<div class="row static-info">
@@ -534,7 +535,7 @@
 																 Residence:
 															</div>
 															<div class="col-md-7 value">
-																 Raffle
+																 <?php echo $student->residence_name; ?>
 															</div>
 														</div>
 													</div>
@@ -556,7 +557,7 @@
 																 Order ID:
 															</div>
 															<div class="col-md-7 value">
-																 Order1
+																 <?php echo $caterers->id; ?>
 															</div>
 														</div>
 														<div class="row static-info">
@@ -564,7 +565,7 @@
 																 Caterer:
 															</div>
 															<div class="col-md-7 value">
-																 MAC
+																 <?php echo $caterers->name; ?>
 															</div>
 														</div>
 														
@@ -573,7 +574,7 @@
 																 Email:
 															</div>
 															<div class="col-md-7 value">
-																 Gan@gmail.com 
+																 <?php echo $caterers->email; ?>
 															</div>
 														</div>
 														<div class="row static-info">
@@ -581,7 +582,7 @@
 																 Phone Number:
 															</div>
 															<div class="col-md-7 value">
-																 98765432
+																 <?php echo $caterers->phone; ?>
 															</div>
 														</div>
 														<div class="row static-info">
@@ -589,9 +590,7 @@
 																 Description:
 															</div>
 															<div class="col-md-7 value">
-																 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam sit nonummy nibh euismod tincidunt ut laoreet dolore magna aliquarm erat sit volutpat. Nostrud exerci tation ullamcorper suscipit lobortis nisl aliquip commodo consequat.
-
-																 Duis autem vel eum iriure dolor vulputate velit esse molestie at dolore. 
+																<?php echo $caterers->description; ?>
 															</div>
 														</div>
 													</div>
@@ -639,22 +638,15 @@
 															</thead>
 															<tbody>
 															<tr>
-																<td>
-																	<a href="#">
-																	SubOrder 1 </a>
-																</td>
-																<td>
-																	David
-																</td>
-																<td>
-																	20:30
-																</td>
-																<td>
-																	$0.00
-																</td>
-																<td>
-																	$10.00
-																</td>
+																<?php foreach ($suborders as $suborder) { ?>
+																<tr>
+																	<td><?php echo $suborder->id; ?></td>
+																	<td><?php echo $suborder->ordered_by; ?></td>
+																	<td><?php echo $suborder->updated_at; ?></td>
+																	<td><?php echo $suborder->paid; ?></td>
+																	<td><?php echo $suborder->total_price; ?></td>
+																</tr>
+																<?php } ?>
 																
 															</tr>															
 															</tbody>
@@ -677,6 +669,7 @@
 				</div>
 			</div>
 			<!-- END PAGE CONTENT-->
+			<?php echo form_close(); ?>
 		</div>
 	</div>
 	<!-- END CONTENT -->

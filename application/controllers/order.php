@@ -24,7 +24,7 @@ class Order extends CI_Controller {
 				$this->_create_order();
 			}
 		} else {
-			$sql = "SELECT student.name as student_name, matric_no, email, residence.name as residence_name FROM `student`, `residence` WHERE student.residence_id = residence.id LIMIT 1"; // TODO: Select the particular student currently logged in as.
+			$sql = "SELECT student.name as student_name, matric_no, email, phone, residence.name as residence_name FROM `student`, `residence` WHERE student.residence_id = residence.id LIMIT 1"; // TODO: Select the particular student currently logged in as.
 			$student = $this->db->query($sql);
 			$data['student'] = $student->row();
 
@@ -38,7 +38,19 @@ class Order extends CI_Controller {
 
 	public function suborder()
 	{
-		$this->load->view('suborder');
+			$sql = "SELECT student.name as student_name, matric_no, email, phone, residence.name as residence_name FROM `student`, `residence` WHERE student.residence_id = residence.id LIMIT 1";
+			$student = $this->db->query($sql);
+			$data['student'] = $student->row();
+
+			$sql = "SELECT * FROM `caterer` LIMIT 1";
+			$caterers = $this->db->query($sql);
+			$data['caterers'] = $caterers->row();
+
+			$sql = "SELECT * FROM `suborder`, `student`, `order` WHERE suborder.order_id = order.id AND suborder.ordered_by = student.matric_no ";
+			$suborders = $this->db->query($sql);
+			$data['suborders'] = $suborders->result();
+
+			$this->load->view('suborder', $data);
 	}
 
 	public function details()

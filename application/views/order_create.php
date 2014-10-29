@@ -541,6 +541,14 @@
 								</div>
 								<div class="row static-info">
 									<div class="col-md-2 name">
+										 Phone Number:
+									</div>
+									<div class="col-md-7 value">
+										 <?php echo $student->phone; ?>
+									</div>
+								</div>
+								<div class="row static-info">
+									<div class="col-md-2 name">
 										 Residence:
 									</div>
 									<div class="col-md-7 value">
@@ -587,9 +595,23 @@
 									</div>
 									<div class="row static-info">
 										<div class="col-md-2 name">
+											 Phone:
+										</div>
+										<div id="caterer-phone" class="col-md-7 value">
+										</div>
+									</div>
+									<div class="row static-info">
+										<div class="col-md-2 name">
 											 Address:
 										</div>
 										<div id="caterer-address" class="col-md-7 value">
+										</div>
+									</div>
+									<div class="row static-info">
+										<div class="col-md-2 name">
+											 Description:
+										</div>
+										<div id="caterer-description" class="col-md-7 value">
 										</div>
 									</div>
 									<div class="row static-info">
