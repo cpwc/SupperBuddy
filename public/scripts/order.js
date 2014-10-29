@@ -123,6 +123,7 @@ var Order = function () {
 		init: function () {
 
 			handleCatererSelect();
+			handleFoodSelect();
 			// handleRegister();
 
 		}
