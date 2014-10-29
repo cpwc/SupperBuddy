@@ -555,7 +555,7 @@
 																						<select id="food" name="food" class="form-control input-large select2me" data-placeholder="Select...">
 																							<option value=""></option>
 																							<?php foreach ($foods as $food) { ?>
-																							<option value="<?php echo $food->id; ?>"><?php echo $food->food_name; ?></option>
+																							<option value="<?php echo $food->id; ?>"><?php echo $food->name; ?></option>
 																							<?php } ?>
 																						</select>
 																				</div>
