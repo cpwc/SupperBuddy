@@ -96,8 +96,8 @@ class Caterer extends CI_Controller
 			'name' => $this->input->post('food_name'),
 			'price' => $this->input->post('food_price'),
 			'caterer' => $caterer_id,
-			'created' => $time;
-			'updated' => $time;
+			'created' => $time,
+			'updated' => $time
 		);
 
 		$sql = "INSERT INTO food (name, price, caterer_id, created_at, updated_at) VALUES (?, ?, ?, ?, ?)";
