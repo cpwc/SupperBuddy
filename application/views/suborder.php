@@ -557,7 +557,7 @@
 																 Order ID:
 															</div>
 															<div class="col-md-7 value">
-																 <?php echo $caterers->id; ?>
+																 <?php echo $order->id; ?>
 															</div>
 														</div>
 														<div class="row static-info">
