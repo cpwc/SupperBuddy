@@ -38,7 +38,7 @@ class Order extends CI_Controller {
 
 	public function suborder($id)
 	{
-			$sql = "SELECT order.caterer_id as caterer_id, order.created_by as created_by FROM `order` WHERE order.id = " . $id;
+			$sql = "SELECT order.caterer_id as caterer_id, order.created_by as created_by FROM `order` WHERE order.id = " . $id . " LIMIT 1";
 			$order = $this->db->query($sql);
 			$data['orders'] = $order->row();
 
