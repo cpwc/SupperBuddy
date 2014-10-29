@@ -36,8 +36,9 @@ class Order extends CI_Controller {
 		}
 	}
 
-	public function suborder()
+	public function suborder($id)
 	{
+		if ($this->input->server('REQUEST_METHOD') == 'GET') {
 			$sql = "SELECT student.name as student_name, matric_no, email, phone, residence.name as residence_name FROM `student`, `residence` WHERE student.residence_id = residence.id LIMIT 1";
 			$student = $this->db->query($sql);
 			$data['student'] = $student->row();
@@ -46,11 +47,23 @@ class Order extends CI_Controller {
 			$caterers = $this->db->query($sql);
 			$data['caterers'] = $caterers->row();
 
-			$sql = "SELECT * FROM `sub_order`, `student`, `order` WHERE sub_order.order_id = order.id AND sub_order.ordered_by = student.matric_no ";
+			$sql = "SELECT * FROM `sub_order`, `student`, `order` WHERE sub_order.order_id = " . $id . "  AND sub_order.ordered_by = student.matric_no ";
 			$suborders = $this->db->query($sql);
-			$data['suborders'] = $suborders->result();
+			$data['suborders'] = $suborders->row();
 
 			$this->load->view('suborder', $data);
+		}
+	}
+
+	public function detail($id)
+	{
+		if ($this->input->server('REQUEST_METHOD') == 'GET') {
+			$sql = "SELECT id, name, email, phone, address, description FROM `caterer` WHERE id = " . $id;
+			$caterer = $this->db->query($sql)->row();
+
+			header('Content-Type: application/json');
+    		echo json_encode($caterer);
+		}
 	}
 
 	public function details()
