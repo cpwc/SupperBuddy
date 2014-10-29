@@ -46,7 +46,7 @@ class Order extends CI_Controller {
 			$caterers = $this->db->query($sql);
 			$data['caterers'] = $caterers->row();
 
-			$sql = "SELECT * FROM `suborder`, `student`, `order` WHERE suborder.order_id = order.id AND suborder.ordered_by = student.matric_no ";
+			$sql = "SELECT * FROM `sub_order`, `student`, `order` WHERE sub_order.order_id = order.id AND sub_order.ordered_by = student.matric_no ";
 			$suborders = $this->db->query($sql);
 			$data['suborders'] = $suborders->result();
 
