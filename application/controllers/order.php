@@ -38,15 +38,15 @@ class Order extends CI_Controller {
 
 	public function suborder($id)
 	{
-			$sql = "SELECT order.caterer_id as caterer_id, order.created_by as created_by FROM `order` WHERE order.id = " . $id . " LIMIT 1";
+			$sql = "SELECT caterer_id, created_by FROM `order` WHERE order.id = " . $id;
 			$order = $this->db->query($sql);
 			$data['orders'] = $order->row();
 
-			$sql = "SELECT student.name as student_name, matric_no, email, phone, residence.name as residence_name FROM `student`, `residence` WHERE student.residence_id = residence.id AND student.matric_no = " . $order->created_by;
+			$sql = "SELECT student.name as student_name, matric_no, email, phone, residence.name as residence_name FROM `student`, `residence` WHERE student.residence_id = residence.id LIMIT 1";
 			$student = $this->db->query($sql);
 			$data['student'] = $student->row();
 
-			$sql = "SELECT * FROM `caterer` WHERE caterer.id = " . $order->caterer_id . " LIMIT 1";
+			$sql = "SELECT * FROM `caterer` LIMIT 1";
 			$caterers = $this->db->query($sql);
 			$data['caterers'] = $caterers->row();
 
