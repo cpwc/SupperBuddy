@@ -64,7 +64,7 @@ class Caterer extends CI_Controller
 	public function detail($id)
 	{
 		if ($this->input->server('REQUEST_METHOD') == 'GET') {
-			$sql = "SELECT id, name, email, address FROM `caterer` WHERE id = " . $id;
+			$sql = "SELECT id, name, email, phone, address, description FROM `caterer` WHERE id = " . $id;
 			$caterer = $this->db->query($sql)->row();
 
 			header('Content-Type: application/json');
