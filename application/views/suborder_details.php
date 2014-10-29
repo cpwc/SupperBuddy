@@ -542,9 +542,6 @@
 																			<th width="10%">
 																				 Quantity
 																			</th>
-																			<th width="15%">
-																				 Created at
-																			</th>
 																			<th width="10%">
 																				 Actions
 																			</th>
@@ -570,44 +567,11 @@
 																				</div>
 																				
 																			</td>
-																			<td>
-																				27/10/2014 23:59
-																			</td>
+																			
 																			<td>
 																				
 																					<button class="btn btn-sm yellow filter-submit margin-bottom"><i class="fa fa-submit"></i> Add</button>
-																			
-																				<button class="btn btn-sm red filter-cancel"><i class="fa fa-times"></i> Remove</button>
-																			</td>
-																		</tr>
-																		<tr role="row" class="filter">
-																			<td>
-																				2
-																			</td>
-																			<td>
-																				<select class="form-control input-large select2me" data-placeholder="Select...">
-																					<option value=""></option>
-																					<option value="#">Chicken Rice</option>
-																					<option value="#">Fish Burger</option>
-																					<option value="#">Beef Burger</option>
-																				</select>
-																			</td>
-																			<td>
-																				$5.00
-																			</td>
-																			<td>
-																				<div class="margin-bottom-5">
-																					<input type="text" class="form-control form-filter input-sm" name="quantity" placeholder="QTY"/>
-																				</div>
 																				
-																			</td>
-																			<td>
-																				27/10/2014 23:59
-																			</td>
-																			<td>
-																				
-																					<button class="btn btn-sm yellow filter-submit margin-bottom"><i class="fa fa-submit"></i> Add</button>
-																			
 																				<button class="btn btn-sm red filter-cancel"><i class="fa fa-times"></i> Remove</button>
 																			</td>
 																		</tr>
