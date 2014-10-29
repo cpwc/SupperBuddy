@@ -38,11 +38,15 @@ class Order extends CI_Controller {
 
 	public function suborder($id)
 	{
-			$sql = "SELECT student.name as student_name, matric_no, email, phone, residence.name as residence_name FROM `student`, `residence` WHERE student.residence_id = residence.id LIMIT 1";
+			$sql = "SELECT caterer_id, created_by FROM `order` WHERE order.id = " . $id;
+			$order = $this->db->query($sql);
+			$data['order'] = $order->row();
+
+			$sql = "SELECT student.name as student_name, matric_no, email, phone, residence.name as residence_name FROM `student`, `residence` WHERE student.matric_no = " . $order->created_by ." AND student.residence_id = residence.id LIMIT 1";
 			$student = $this->db->query($sql);
 			$data['student'] = $student->row();
 
-			$sql = "SELECT * FROM `caterer` LIMIT 1";
+			$sql = "SELECT * FROM `caterer` WHERE caterer.id = " . $order->caterer_id . " LIMIT 1";
 			$caterers = $this->db->query($sql);
 			$data['caterers'] = $caterers->row();
 
@@ -55,9 +59,9 @@ class Order extends CI_Controller {
 
 	public function suborderdetails()
 	{
-		$sql = "SELECT food.name as food_name, food.price as food_price FROM `food`, `caterer` WHERE food.caterer_id = caterer.id";
+		$sql = "SELECT food.name as food_name, food.price as food_price, food.id FROM `food`, `caterer` WHERE food.caterer_id = caterer.id";
 		$food = $this->db->query($sql);
-		$data['food'] = $food->result();
+		$data['foods'] = $food->result();
 
 		$this->load->view('suborder_details');
 	}

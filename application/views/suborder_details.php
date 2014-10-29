@@ -551,15 +551,17 @@
 																				1
 																			</td>
 																			<td>
-																				<select class="form-control input-large select2me" data-placeholder="Select...">
-																					<option value=""></option>
-																					<option value="#">Chicken Rice</option>
-																					<option value="#">Fish Burger</option>
-																					<option value="#">Beef Burger</option>
-																				</select>
+																				<div class="form-group">
+																						<select id="food" name="food" class="form-control input-large select2me" data-placeholder="Select...">
+																							<option value=""></option>
+																							<?php foreach ($foods as $food) { ?>
+																							<option value="<?php echo $food->id; ?>"><?php echo $food->food_name; ?></option>
+																							<?php } ?>
+																						</select>
+																				</div>
 																			</td>
 																			<td>
-																				$5.00
+																				 <?php echo $food->food_price; ?>
 																			</td>
 																			<td>
 																				<div class="margin-bottom-5">
