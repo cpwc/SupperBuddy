@@ -565,7 +565,7 @@
 																 Caterer:
 															</div>
 															<div class="col-md-7 value">
-																 <?php echo $caterers->name; ?>
+																 <?php echo $caterer->name; ?>
 															</div>
 														</div>
 														
@@ -574,7 +574,7 @@
 																 Email:
 															</div>
 															<div class="col-md-7 value">
-																 <?php echo $caterers->email; ?>
+																 <?php echo $caterer->email; ?>
 															</div>
 														</div>
 														<div class="row static-info">
@@ -582,7 +582,7 @@
 																 Phone Number:
 															</div>
 															<div class="col-md-7 value">
-																 <?php echo $caterers->phone; ?>
+																 <?php echo $caterer->phone; ?>
 															</div>
 														</div>
 														<div class="row static-info">
@@ -590,7 +590,7 @@
 																 Description:
 															</div>
 															<div class="col-md-7 value">
-																<?php echo $caterers->description; ?>
+																<?php echo $caterer->description; ?>
 															</div>
 														</div>
 													</div>

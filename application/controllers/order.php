@@ -40,15 +40,15 @@ class Order extends CI_Controller {
 	{
 			$sql = "SELECT * FROM `order` WHERE order.id = " . $id . " LIMIT 1";
 			$order = $this->db->query($sql);
-			$data['orders'] = $order->row();
+			$data['order'] = $order->row();
 
-			$sql = "SELECT student.name as student_name, matric_no, email, phone, residence.name as residence_name FROM `student`, `residence` WHERE student.residence_id = residence.id AND student.matric_no = " . $order->created_by . " LIMIT 1";
+			$sql = "SELECT student.name as student_name, matric_no, email, phone, residence.name as residence_name FROM `student`, `residence` WHERE student.residence_id = residence.id AND student.matric_no = '" . $order->row()->created_by . "' LIMIT 1";
 			$student = $this->db->query($sql);
 			$data['student'] = $student->row();
 
-			$sql = "SELECT * FROM `caterer` WHERE caterer.id = '" . $order->caterer_id . "' LIMIT 1";
-			$caterers = $this->db->query($sql);
-			$data['caterers'] = $caterers->row();
+			$sql = "SELECT * FROM `caterer` WHERE caterer.id = '" . $order->row()->caterer_id . "' LIMIT 1";
+			$caterer = $this->db->query($sql);
+			$data['caterer'] = $caterer->row();
 
 			$sql = "SELECT * FROM `sub_order` WHERE sub_order.order_id = " . $id;
 			$suborders = $this->db->query($sql);
