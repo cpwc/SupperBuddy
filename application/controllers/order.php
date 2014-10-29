@@ -38,9 +38,9 @@ class Order extends CI_Controller {
 
 	public function suborder($id)
 	{
-			$sql = "SELECT id, caterer_id, created_by FROM `order` WHERE order.id = " . $id;
+			$sql = "SELECT * FROM `order` WHERE order.id = " . $id;
 			$order = $this->db->query($sql);
-			$data['orders'] = $order->result();
+			$data['orders'] = $order->row();
 
 			$sql = "SELECT student.name as student_name, matric_no, email, phone, residence.name as residence_name FROM `student`, `residence` WHERE student.residence_id = residence.id LIMIT 1";
 			$student = $this->db->query($sql);
