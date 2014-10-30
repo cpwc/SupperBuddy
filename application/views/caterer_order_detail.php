@@ -532,6 +532,9 @@
 										Ordered by
 									</th>
 									<th>
+										USENET ID
+									</th>
+									<th>
 										 Created at
 									</th>
 									<th>
@@ -545,6 +548,7 @@
 										<td><?php echo $detail->food_name; ?></td>
 										<td><?php echo $detail->quantity; ?></td>
 										<td>$<?php echo $detail->price; ?></td>
+										<td>$<?php echo $detail->student_name; ?></td>
 										<td><?php echo $detail->ordered_by; ?></td>
 										<td><?php echo $detail->created_at; ?></td>
 										<td><?php echo $detail->updated_at; ?></td>
