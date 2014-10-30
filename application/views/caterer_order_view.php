@@ -539,7 +539,7 @@
 									<?php foreach ($orders as $order) { ?>
 									<tr>
 										<td><?php echo $order->id; ?></td>
-										<td>$<?php echo $order->status; ?></td>
+										<td><?php echo $order->status; ?></td>
 										<td><?php echo $order->created_by; ?></td>
 										<td><?php echo $order->created_at; ?></td>
 										<td><?php echo $order->updated_at; ?></td>
