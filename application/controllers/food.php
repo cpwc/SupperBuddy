@@ -50,7 +50,7 @@ class Food extends CI_Controller {
 	private function _create()
 	{
 		$caterer_id = 1;
-		$time = time();
+		$time = date('Y-m-d H:i:s');
 		$params = array(
 			'name' => $this->input->post('name'),
 			'price' => $this->input->post('price'),
