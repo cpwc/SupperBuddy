@@ -59,7 +59,11 @@ class Order extends CI_Controller {
 
 	public function suborderdetails($id)
 	{
-		$sql = "SELECT * FROM `food` WHERE food.caterer_id = " . $id;
+		$sql = "SELECT * FROM `order` WHERE order.id = " . $id . " LIMIT 1";
+		$order = $this->db->query($sql);
+		$data['order'] = $order->row();
+
+		$sql = "SELECT * FROM `food` WHERE food.caterer_id = " . $order->row()->caterer_id;
 		$foods = $this->db->query($sql);
 		$data['foods'] = $foods->result();
 
