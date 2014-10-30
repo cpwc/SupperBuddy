@@ -7,12 +7,12 @@ class CatererOrder extends CI_Controller {
 		$sql = "SELECT * FROM `order` WHERE order.caterer_id = 1 ";
 		$orders = $this->db->query($sql);
 
-		$data['orders'] = $foods->result();
+		$data['orders'] = $orders->result();
 
 		$this->load->view('caterer_order_view', $data);
 	}
 
 }
 
-/* End of file food.php */
-/* Location: ./application/controllers/food.php */
+/* End of file CatererOrder.php */
+/* Location: ./application/controllers/CatererOrder.php */
