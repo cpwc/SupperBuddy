@@ -30,7 +30,7 @@ var Order = function () {
 			$food_id = $(this).val()
 			$.ajax({
 				type: "GET",
-				url: "http://supperbuddy.cpwc.me/index.php/order/suborderdetails/" + $food_id,
+				url: "http://supperbuddy.cpwc.me/index.php/food/detail/" + $food_id,
 				success: function (data)
 				{
 					$("#food-details").show();

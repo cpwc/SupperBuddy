@@ -28,6 +28,25 @@ class Food extends CI_Controller {
 		}
 	}
 
+	public function detail($food_id)
+	{
+		if ($this->input->server('REQUEST_METHOD') == 'GET') {
+			$sql = "SELECT price FROM `food` WHERE id = " . $food_id;
+			$foods = $this->db->query($sql)->row();
+
+			header('Content-Type: application/json');
+    		echo json_encode($foods);
+		}
+	}
+
+	public function delete($id)
+	{
+		$sql = "DELETE FROM `food` WHERE food.id = " . $id;
+		$this->db->query($sql);
+
+		echo $this->db->affected_rows();
+	}
+
 	private function _create()
 	{
 		$caterer_id = 1;
