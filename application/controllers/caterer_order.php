@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class CatererOrder extends CI_Controller {
+class Catererorder extends CI_Controller {
 
 	public function index()
 	{
