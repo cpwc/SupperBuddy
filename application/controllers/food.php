@@ -4,7 +4,7 @@ class Food extends CI_Controller {
 
 	public function index()
 	{
-		$sql = "SELECT * FROM `food` WHERE food.caterer_id = `1` ";
+		$sql = "SELECT * FROM `food` WHERE food.caterer_id = 1 ";
 		$foods = $this->db->query($sql);
 
 		$data['foods'] = $foods->result();

@@ -535,10 +535,10 @@
 								<tbody>
 									<?php foreach ($foods as $food) { ?>
 									<tr>
-										<td><?php echo $foods->name; ?></td>
-										<td><?php echo $foods->price; ?></td>
-										<td><?php echo $foods->created_at; ?></td>
-										<td><?php echo $foods->updated_at; ?></td>
+										<td><?php echo $food->name; ?></td>
+										<td><?php echo $food->price; ?></td>
+										<td><?php echo $food->created_at; ?></td>
+										<td><?php echo $food->updated_at; ?></td>
 									</tr>
 									<?php } ?>
 								</tbody>
