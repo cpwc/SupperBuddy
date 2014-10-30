@@ -544,7 +544,7 @@
 										<td> 
 										<button class="btn btn-sm yellow filter-submit margin-bottom"><i class="fa fa-submit"></i> Edit</button>
 																				
-										<a href="index.php/food/delete/<?php echo $food->id; ?>" class="btn btn-sm red filter-cancel"><i class="fa fa-times"></i> Remove</a>
+										<a href="/index.php/food/delete/<?php echo $food->id; ?>" class="btn btn-sm red filter-cancel"><i class="fa fa-times"></i> Remove</a>
 										</td>
 									</tr>
 									<?php } ?>
