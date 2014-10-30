@@ -19,7 +19,7 @@ class Catererorder extends CI_Controller {
 	  $details = $this->db->query($sql);
 	  $data['details'] = $details->result();
 
-	  $this->load->view('caterer_order_detail', $data)
+	  $this->load->view('caterer_order_detail', $data);
 	}
 
 }
