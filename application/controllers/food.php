@@ -15,8 +15,8 @@ class Food extends CI_Controller {
 	public function create()
 	{
 		if ($this->input->server('REQUEST_METHOD') == 'POST') {
-			$this->form_validation->set_rules('food_name', 'name', 'required');
-			$this->form_validation->set_rules('food_price', 'price', 'required');
+			$this->form_validation->set_rules('name', 'Name', 'required');
+			$this->form_validation->set_rules('price', 'Price', 'required');
 			
 			if ($this->form_validation->run() == FALSE) {
 				redirect('/food/create');
@@ -33,11 +33,11 @@ class Food extends CI_Controller {
 		$caterer_id = 1;
 		$time = time();
 		$params = array(
-			'name' => $this->input->post('food_name'),
-			'price' => $this->input->post('food_price'),
-			'caterer' => $caterer_id,
-			'created' => $time,
-			'updated' => $time
+			'name' => $this->input->post('name'),
+			'price' => $this->input->post('price'),
+			'caterer_id' => $caterer_id,
+			'created_at' => $time,
+			'updated_at' => $time
 		);
 
 		$sql = "INSERT INTO food (name, price, caterer_id, created_at, updated_at) VALUES (?, ?, ?, ?, ?)";
