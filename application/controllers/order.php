@@ -67,7 +67,7 @@ class Order extends CI_Controller {
 		$foods = $this->db->query($sql);
 		$data['foods'] = $foods->result();
 
-		$this->load->view('suborder_details');
+		$this->load->view('suborder_details', $data);
 	}
 
 	private function _create_order()
