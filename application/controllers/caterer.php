@@ -71,40 +71,6 @@ class Caterer extends CI_Controller
     		echo json_encode($caterer);
 		}
 	}
-
-	public function addfood()
-	{
-		if ($this->input->server('REQUEST_METHOD') == 'POST') {
-			$this->form_validation->set_rules('food_name', 'name', 'required');
-			$this->form_validation->set_rules('food_price', 'price', 'required');
-			
-			if ($this->form_validation->run() == FALSE) {
-				redirect('/caterer/addfood');
-			} else {
-				$this->_addfood();
-			}
-		} else {
-			$this->load->view('caterer_food');
-		}
-	}
-
-	private function _addfood()
-	{
-		$caterer_id = 1;
-		$time = time();
-		$params = array(
-			'name' => $this->input->post('food_name'),
-			'price' => $this->input->post('food_price'),
-			'caterer' => $caterer_id,
-			'created' => $time,
-			'updated' => $time
-		);
-
-		$sql = "INSERT INTO food (name, price, caterer_id, created_at, updated_at) VALUES (?, ?, ?, ?, ?)";
-		$this->db->query($sql, $params);
-		
-		echo $this->db->affected_rows();
-	}
 	
 	private function _authenticate()
 	{
