@@ -507,6 +507,59 @@
 			
 				<!-- BEGIN PAGE CONTENT-->
 				<div class="row">
+											<div class="col-md-12 col-sm-12">
+												<div class="portlet blue-hoki box">
+													<div class="portlet-title">
+														<div class="caption">
+															<i class="fa fa-cogs"></i>Initiator Information
+														</div>
+													</div>
+													<div class="portlet-body">
+														<div class="row static-info">
+															<div class="col-md-2 name">
+																 Name:
+															</div>
+															<div class="col-md-7 value">
+																 <?php echo $student->student_name; ?>
+															</div>
+														</div>
+														<div class="row static-info">
+															<div class="col-md-2 name">
+																 Student ID:
+															</div>
+															<div class="col-md-7 value">
+																 <?php echo $student->matric_no; ?>
+															</div>
+														</div>
+														<div class="row static-info">
+															<div class="col-md-2 name">
+																 Email:
+															</div>
+															<div class="col-md-7 value">
+																 <?php echo $student->email; ?>
+															</div>
+														</div>
+														<div class="row static-info">	
+															<div class="col-md-2 name">
+																 Phone Number:
+															</div>
+															<div class="col-md-7 value">
+																<?php echo $student->phone; ?>
+															</div>
+														</div>
+														<div class="row static-info">
+															<div class="col-md-2 name">
+																 Residence:
+															</div>
+															<div class="col-md-7 value">
+																 <?php echo $student->residence_name; ?>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+				<div class="row">
 					<div class="col-md-12 col-sm-12">
 						<div class="portlet yellow-crusta box">
 							<div class="portlet-title">

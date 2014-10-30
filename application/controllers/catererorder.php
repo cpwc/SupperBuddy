@@ -14,12 +14,16 @@ class Catererorder extends CI_Controller {
 
 	public function details($id)
 	{
-	  $sql = "SELECT student.name as student_name, food.name as food_name, sub_order_detail.quantity as quantity, food.price as price, sub_order.ordered_by as ordered_by, sub_order.created_at as created_at, sub_order.updated_at as updated_at FROM `sub_order`, `sub_order_detail`, `food`, `student` WHERE student.matric_no = sub_order.ordered_by AND sub_order.id = sub_order_detail.suborder_id AND sub_order_detail.food_id = food.id AND sub_order.order_id = " . $id;
+	 	$sql = "SELECT student.name as student_name, matric_no, email, phone, residence.name as residence_name FROM `student`, `residence`, `order` WHERE student.residence_id = residence.id AND student.matric_no = order.created_by AND order.id = " . $id . " LIMIT 1";
+		$student = $this->db->query($sql);
+		$data['student'] = $student->row(); 
 
-	  $details = $this->db->query($sql);
-	  $data['details'] = $details->result();
+		$sql = "SELECT student.name as student_name, food.name as food_name, sub_order_detail.quantity as quantity, food.price as price, sub_order.ordered_by as ordered_by, sub_order.created_at as created_at, sub_order.updated_at as updated_at FROM `sub_order`, `sub_order_detail`, `food`, `student` WHERE student.matric_no = sub_order.ordered_by AND sub_order.id = sub_order_detail.suborder_id AND sub_order_detail.food_id = food.id AND sub_order.order_id = " . $id;
 
-	  $this->load->view('caterer_order_detail', $data);
+		$details = $this->db->query($sql);
+		$data['details'] = $details->result();
+
+		$this->load->view('caterer_order_detail', $data);
 	}
 
 }
