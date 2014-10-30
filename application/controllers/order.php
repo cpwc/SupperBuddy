@@ -63,7 +63,7 @@ class Order extends CI_Controller {
 		$order = $this->db->query($sql);
 		$data['order'] = $order->row();
 
-		$sql = "SELECT * FROM `food` WHERE food.caterer_id = " . $order->row()->caterer_id;
+		$sql = "SELECT * FROM `food` WHERE food.is_deleted = 0 AND food.caterer_id = " . $order->row()->caterer_id;
 		$foods = $this->db->query($sql);
 		$data['foods'] = $foods->result();
 

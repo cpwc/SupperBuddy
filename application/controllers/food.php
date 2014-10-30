@@ -31,7 +31,7 @@ class Food extends CI_Controller {
 	public function detail($food_id)
 	{
 		if ($this->input->server('REQUEST_METHOD') == 'GET') {
-			$sql = "SELECT price FROM `food` WHERE id = " . $food_id;
+			$sql = "SELECT price FROM `food` WHERE food.is_deleted = 0 AND id = " . $food_id;
 			$foods = $this->db->query($sql)->row();
 
 			header('Content-Type: application/json');
@@ -41,7 +41,7 @@ class Food extends CI_Controller {
 
 	public function delete($id)
 	{
-		$sql = "DELETE FROM `food` WHERE food.id = " . $id;
+		$sql = "UPDATE `food` SET food.is_deleted = 1 WHERE food.id = " . $id;
 		$this->db->query($sql);
 
 		echo $this->db->affected_rows();
