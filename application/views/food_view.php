@@ -538,7 +538,7 @@
 									<?php foreach ($foods as $food) { ?>
 									<tr>
 										<td><?php echo $food->name; ?></td>
-										<td>$<?php echo $food->price; ?></td>
+										<td>$<?php echo number_format($food->price, 2); ?></td>
 										<td><?php echo $food->created_at; ?></td>
 										<td><?php echo $food->updated_at; ?></td>
 										<td> 

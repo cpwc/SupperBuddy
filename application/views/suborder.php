@@ -645,7 +645,7 @@
 																	<td><?php echo $suborder->ordered_by; ?></td>
 																	<td><?php echo $suborder->updated_at; ?></td>
 																	<td><?php echo $suborder->paid; ?></td>
-																	<td><?php echo $suborder->total_price; ?></td>
+																	<td>$<?php echo number_format($suborder->total_price, 2); ?></td>
 																</tr>
 																<?php } ?>
 																
