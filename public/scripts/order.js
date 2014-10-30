@@ -24,7 +24,7 @@ var Order = function () {
 
 	var handleFoodSelect = function() {
 
-		//$("#caterer-details").hide();
+		$("#food-details").hide();
 
 		$("select#food").change(function() {
 			$food_id = $(this).val()
@@ -33,7 +33,7 @@ var Order = function () {
 				url: "http://supperbuddy.cpwc.me/index.php/order/suborderdetails/" + $food_id,
 				success: function (data)
 				{
-					//$("#caterer-details").show();
+					$("#food-details").show();
 					// $("#caterer-id").text(data.id);
 					$("#food-price").text(data.price);
 					

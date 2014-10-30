@@ -526,6 +526,7 @@
 															<!-- Begin: life time stats -->
 															<div class="portlet">
 																<div class="portlet-body">
+																  <div id="food-details"> 
 																	<div class="table-container">
 																		<table class="table table-striped table-bordered table-hover" id="datatable_products">
 																		<thead>
@@ -582,7 +583,8 @@
 																		<tbody>
 																		</tbody>
 																		</table>
-																	</div>
+																	 </div>
+																   </div>
 																</div>
 															</div>
 															<!-- End: life time stats -->
