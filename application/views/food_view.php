@@ -510,7 +510,7 @@
 						<div class="portlet blue-hoki box">
 							<div class="portlet-title">
 								<div class="caption">
-									<i class="fa fa-cogs"></i>Food Information
+									<i class="fa fa-cogs"></i>Food
 								</div>
 							</div>
 							<div class="portlet-body">
@@ -538,11 +538,11 @@
 									<?php foreach ($foods as $food) { ?>
 									<tr>
 										<td><?php echo $food->name; ?></td>
-										<td><?php echo $food->price; ?></td>
+										<td>$<?php echo $food->price; ?></td>
 										<td><?php echo $food->created_at; ?></td>
 										<td><?php echo $food->updated_at; ?></td>
 										<td> 
-										<button class="btn btn-sm yellow filter-submit margin-bottom"><i class="fa fa-submit"></i> Add</button>
+										<button class="btn btn-sm yellow filter-submit margin-bottom"><i class="fa fa-submit"></i> Edit</button>
 																				
 										<button class="btn btn-sm red filter-cancel"><i class="fa fa-times"></i> Remove</button>
 										</td>
