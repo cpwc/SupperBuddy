@@ -7,7 +7,16 @@ class Caterer extends CI_Controller
 	
 	public function index()
 	{
-		redirect('/caterer/login');
+		$caterer = $this->session->userdata('caterer');
+		$caterer_id = $caterer['id'];
+
+		if (!$caterer_id) {
+			redirect('/caterer/login');
+			return;
+		} else {
+			redirect('/catererorder');
+			return;
+		}
 	}
 	
 	public function login()
@@ -28,6 +37,12 @@ class Caterer extends CI_Controller
 		} else {
 			$this->load->view('caterer_login');
 		}
+	}
+
+	public function logout()
+	{
+		$this->session->unset_userdata('caterer');
+		redirect('/caterer/login');
 	}
 	
 	public function register()
