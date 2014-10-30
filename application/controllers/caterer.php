@@ -13,14 +13,18 @@ class Caterer extends CI_Controller
 	public function login()
 	{
 		if ($this->input->server('REQUEST_METHOD') == 'POST') {
-			$this->form_validation->set_rules('email', 'Email', 'required');
+			$this->form_validation->set_rules('email', 'Email', 'required|valid_email|callback_authenticate');
 			$this->form_validation->set_rules('password', 'Password', 'required');
+
+			$this->form_validation->set_message('authenticate', 'Invalid login. Please try again.');
 			
 			if ($this->form_validation->run() == FALSE) {
-				redirect('/caterer/login');
-			} else {
-				$this->_authenticate();
+				$this->load->view('caterer_login');
+				return;
 			}
+
+
+			redirect('/catererorder');
 		} else {
 			$this->load->view('caterer_login');
 		}
@@ -68,23 +72,33 @@ class Caterer extends CI_Controller
 			$caterer = $this->db->query($sql)->row();
 
 			header('Content-Type: application/json');
-    		echo json_encode($caterer);
+			echo json_encode($caterer);
 		}
 	}
 	
-	private function _authenticate()
+	public function authenticate()
 	{
 		$query = $this->db->query('SELECT * FROM caterer WHERE email = "' . $this->input->post('email') . '" LIMIT 1');
-		$user  = $query->row();
 		
-		$hashed   = $user->password;
-		$password = $this->input->post('password');
-		
-		if ($this->phpass->check($password, $hashed)) {
-			echo 'logged in';
-		} else {
-			echo 'wrong password 1';
+		if ($query->num_rows() > 0) {
+			$user = $query->row();
+
+			$hashed = $user->password;
+			$password = $this->input->post('password');
+			
+			if ($this->phpass->check($password, $hashed)) {
+				$session = array(
+					'id'  => $user->id,
+					'email'     => $user->eamil
+				);
+				$this->session->set_userdata('caterer', $session);
+				return true;
+			} else {
+				return false;
+			}
 		}
+
+		return false;
 	}
 	
 	private function _register()
@@ -100,7 +114,7 @@ class Caterer extends CI_Controller
 			'password' => $hashed,
 			'created_at' => $time,
 			'updated_at' => $time
-		);
+			);
 		
 		$sql = "INSERT INTO caterer (name, email, address, password, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?)";
 		$this->db->query($sql, $params);
