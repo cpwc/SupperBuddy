@@ -504,7 +504,7 @@
 				</ul>
 			</div>
 			<!-- END PAGE HEADER-->
-			<?php echo form_open('caterer/addfood'); ?>
+			<?php echo form_open('food/create'); ?>
 				<!-- BEGIN PAGE CONTENT-->
 				<div class="row">
 					<div class="col-md-12 col-sm-12">
