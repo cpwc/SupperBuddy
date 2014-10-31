@@ -39,7 +39,7 @@ class Student extends CI_Controller {
 		if ($query->num_rows() > 0) {
 				$user = $query->row();
 		
-				$this->session->set_userdata('usenet', $user->matric_no);
+				$this->session->set_userdata('usenet', $user->row()->matric_no);
 				return true;
 			} else {
 				return false;
