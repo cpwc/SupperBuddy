@@ -4,7 +4,17 @@ class Student extends CI_Controller {
 
 	public function index()
 	{
-		redirect('/student/login');
+		$usenet = $this->session->userdata('usenet');
+		$usenet_id = $usetnet['matric_no'];
+
+		if (!$usenet_id) {
+			redirect('/student/login');
+			return;
+		} else {
+			redirect('/order');
+			return;
+		}
+		
 	}
 
 	public function login()
@@ -19,8 +29,9 @@ class Student extends CI_Controller {
 				return;
 			}
 
-			redirect('/order');
 
+
+			redirect('/order');
 		} else {
 			$this->load->view('student_login');
 		}
