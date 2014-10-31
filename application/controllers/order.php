@@ -12,6 +12,12 @@ class Order extends CI_Controller {
 		$this->load->view('order_view', $data);
 	}
 
+	public function logout()
+	{
+		$this->session->unset_userdata('usenet');
+		redirect('/student/login');
+	}
+
 	public function create()
 	{
 		if ($this->input->server('REQUEST_METHOD') == 'POST') {
