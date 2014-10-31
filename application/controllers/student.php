@@ -37,7 +37,12 @@ class Student extends CI_Controller {
 		$query = $this->db->query('SELECT * FROM student WHERE matric_no = "' . $this->input->post('usenetid') . '" LIMIT 1');
 
 		if ($query->num_rows() > 0) {
-				$user = $query->row();
+			$user = $query->row();
+
+			$success = $user->matric_no;
+			$post = $this->input->post('usenetid');
+
+			if($this->phpass->check($post, $success)){
 
 				$session = array(
 					'matric_no' => $user->matric_no,
@@ -49,6 +54,7 @@ class Student extends CI_Controller {
 			} else {
 				return false;
 			}
+		}
 		
 
 		return false;	
