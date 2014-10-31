@@ -53,7 +53,7 @@ class Student extends CI_Controller {
 			$success = $user->matric_no;
 			$post = $this->input->post('usenetid');
 
-			if($this->phpass->check($post, $success)){
+			if($post == $success){
 
 				$session = array(
 					'matric_no' => $user->matric_no,
