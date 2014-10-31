@@ -43,7 +43,7 @@ class Student extends CI_Controller {
 		redirect('/student/login');
 	}
 
-	private function authenticate()
+	public function authenticate()
 	{
 		$query = $this->db->query('SELECT * FROM student WHERE matric_no = "' . $this->input->post('usenetid') . '" LIMIT 1');
 
