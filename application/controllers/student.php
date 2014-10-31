@@ -20,7 +20,7 @@ class Student extends CI_Controller {
 	public function login()
 	{
 		if ($this->input->server('REQUEST_METHOD') == 'POST') {
-			$this->form_validation->set_rules('usenetid', 'USENET ID', 'required');
+			$this->form_validation->set_rules('usenetid', 'USENET ID', 'required|callback_authenticate');
 
 			$this->form_validation->set_message('authenticate', 'Invalid login. Please try again.');
 
