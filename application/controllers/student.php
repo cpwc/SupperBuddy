@@ -38,8 +38,13 @@ class Student extends CI_Controller {
 
 		if ($query->num_rows() > 0) {
 				$user = $query->row();
+
+				$session = array(
+					'matric_no' => $user->matric_no,
+					'email' => $user->email
+				);
 		
-				$this->session->set_userdata('usenet', $user->row()->matric_no);
+				$this->session->set_userdata('usenet', $session);
 				return true;
 			} else {
 				return false;
