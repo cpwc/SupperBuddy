@@ -463,7 +463,7 @@
 							<i class="icon-lock"></i> Lock Screen </a>
 						</li>
 						<li>
-							<a href="/student/logout.html">
+							<a href="/student/logout">
 							<i class="icon-key"></i> Log Out </a>
 						</li>
 					</ul>
