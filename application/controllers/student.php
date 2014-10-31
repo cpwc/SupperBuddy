@@ -15,7 +15,7 @@ class Student extends CI_Controller {
 			$this->form_validation->set_message('authenticate', 'Invalid login. Please try again.');
 
 			if ($this->form_validation->run() == FALSE) {
-				$this->load->vew('student_login');
+				$this->load->view('student_login');
 				return;
 			}
 
