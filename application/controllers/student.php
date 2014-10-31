@@ -16,7 +16,7 @@ class Student extends CI_Controller {
 
 			if ($this->form_validation->run() == FALSE) {
 				$this->load->vew('student_login');
-				return
+				return;
 			}
 
 			redirect('/order');
