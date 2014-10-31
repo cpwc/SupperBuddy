@@ -44,7 +44,7 @@ class Student extends CI_Controller {
 			} else {
 				return false;
 			}
-		}
+		
 
 		return false;
 	}
