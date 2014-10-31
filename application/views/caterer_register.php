@@ -68,10 +68,25 @@
 			</div>
 		</div>
 		<div class="form-group">
+			<!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+			<label class="control-label visible-ie8 visible-ie9">Phone</label>
+			<div class="input-icon">
+				<i class="fa fa-phone"></i>
+				<input class="form-control placeholder-no-fix" type="text" placeholder="Phone" name="phone"/>
+			</div>
+		</div>
+		<div class="form-group">
 			<label class="control-label visible-ie8 visible-ie9">Address</label>
 			<div class="input-icon">
 				<i class="fa fa-check"></i>
 				<textarea class="form-control placeholder-no-fix" rows="3" placeholder="Address" name="address"></textarea>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label visible-ie8 visible-ie9">Description</label>
+			<div class="input-icon">
+				<i class="fa fa-check"></i>
+				<textarea class="form-control placeholder-no-fix" rows="3" placeholder="Description of the Company" name="description"></textarea>
 			</div>
 		</div>
 		<div class="form-group">

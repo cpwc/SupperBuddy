@@ -50,7 +50,9 @@ class Caterer extends CI_Controller
 		if ($this->input->server('REQUEST_METHOD') == 'POST') {
 			$this->form_validation->set_rules('organizationname', 'Organization Name', 'required');
 			$this->form_validation->set_rules('address', 'Address', 'required');
-			$this->form_validation->set_rules('email', 'Email', 'required');
+			$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+			$this->form_validation->set_rules('phone', 'Phone', 'required|numeric');
+			$this->form_validation->set_rules('description', 'Description', 'required');
 			$this->form_validation->set_rules('password', 'Password', 'required');
 			$this->form_validation->set_rules('rpassword', 'Re-type Password', 'required|matches[password]');
 			
