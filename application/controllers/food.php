@@ -50,16 +50,18 @@ class Food extends CI_Controller {
 	private function _create()
 	{
 		$caterer_id = 1;
+		$is_deleted = 0;
 		$time = date('Y-m-d H:i:s');
 		$params = array(
 			'name' => $this->input->post('name'),
 			'price' => $this->input->post('price'),
+			'is_deleted' => $is_deleted,
 			'caterer_id' => $caterer_id,
 			'created_at' => $time,
 			'updated_at' => $time
 		);
 
-		$sql = "INSERT INTO food (name, price, caterer_id, created_at, updated_at) VALUES (?, ?, ?, ?, ?)";
+		$sql = "INSERT INTO food (name, price, is_deleted, caterer_id, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?)";
 		$this->db->query($sql, $params);
 		
 		echo $this->db->affected_rows();
