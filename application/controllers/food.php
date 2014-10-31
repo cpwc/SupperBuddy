@@ -4,7 +4,15 @@ class Food extends CI_Controller {
 
 	public function index()
 	{
-		$sql = "SELECT * FROM `food` WHERE food.is_deleted = 0 AND food.caterer_id = 1 ";
+		$caterer = $this->session->userdata('caterer');
+		$caterer_id = $caterer['id'];
+
+		if (!$caterer_id) {
+			redirect('/caterer/login');
+			return;
+		}
+
+		$sql = "SELECT * FROM `food` WHERE food.is_deleted = 0 AND food.caterer_id = " . $caterer_id;
 		$foods = $this->db->query($sql);
 
 		$data['foods'] = $foods->result();
@@ -49,7 +57,14 @@ class Food extends CI_Controller {
 
 	private function _create()
 	{
-		$caterer_id = 1;
+		$caterer = $this->session->userdata('caterer');
+		$caterer_id = $caterer['id'];
+		
+		if (!$caterer_id) {
+			redirect('/caterer/login');
+			return;
+		}
+
 		$is_deleted = 0;
 		$time = date('Y-m-d H:i:s');
 		$params = array(

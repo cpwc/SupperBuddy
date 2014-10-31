@@ -12,26 +12,41 @@ class Student extends CI_Controller {
 		if ($this->input->server('REQUEST_METHOD') == 'POST') {
 			$this->form_validation->set_rules('usenetid', 'USENET ID', 'required');
 
+			$this->form_validation->set_message('authenticate', 'Invalid login. Please try again.');
+
 			if ($this->form_validation->run() == FALSE) {
-				redirect('/student/login');
-			} else {
-				$this->_authenticate();
+				$this->load->vew('student_login');
+				return
 			}
+
+			redirect('/order');
+
 		} else {
 			$this->load->view('student_login');
 		}
 	}
 
-	private function _authenticate()
+	public function logout()
+	{
+		$this->session->unset_userdata('usenet');
+		redirect('/student/login');
+	}
+
+	private function authenticate()
 	{
 		$query = $this->db->query('SELECT * FROM student WHERE matric_no = "' . $this->input->post('usenetid') . '" LIMIT 1');
-		$user = $query->row();
 
-		if ($user != null) {
-		    echo 'logged in';
-		} else {
-		    redirect('/student/login');
+		if ($query->num_rows() > 0) {
+				$user = $query->row();
+		
+				$this->session->set_userdata('usenet', $user->matric_no);
+				return true;
+			} else {
+				return false;
+			}
 		}
+
+		return false;
 	}
 
 }
