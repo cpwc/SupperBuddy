@@ -459,11 +459,11 @@
 						<li class="divider">
 						</li>
 						<li>
-							<a href="extra_lock.html">
+							<a href="#">
 							<i class="icon-lock"></i> Lock Screen </a>
 						</li>
 						<li>
-							<a href="login.html">
+							<a href="logout.html">
 							<i class="icon-key"></i> Log Out </a>
 						</li>
 					</ul>
