@@ -504,22 +504,21 @@
 				</ul>
 			</div>
 			<!-- END PAGE HEADER-->
-			<?php echo form_open('catererorder/search'); ?>
 				<!-- BEGIN PAGE CONTENT-->
 				<div class="row search-form-default">
 					<div class="col-md-12">
+						<form action="#">
 							<div class="input-group">
-								<div class="input-cont" style="width: 50%">
-									<input type="text" placeholder="Hall" name="searchfunction1" class="form-control"/>
-									<input type="text" placeholder="Status" name="searchfunction2" class="form-control"/>
+								<div class="input-cont">
+									<input type="text" placeholder="Search by Hall/Status.." class="form-control"/>
 								</div>
 								<span class="input-group-btn">
-								<input type="submit" value="Search " class="btn green-haze">
+								<button type="button" class="btn green-haze">
 								Search &nbsp; <i class="m-icon-swapright m-icon-white"></i>
-								</input>
+								</button>
 								</span>
 							</div>
-						
+						</form>
 					</div>
 				</div>
 				</br>
@@ -572,7 +571,6 @@
 				</div>
 				<!-- END PAGE CONTENT-->
 				<!-- <input type="hidden" name="caterer_id" value="" id="caterer-id"> -->
-		<?php echo form_close(); ?>
 		</div>
 	</div>
 	<!-- END CONTENT -->
