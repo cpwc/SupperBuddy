@@ -509,7 +509,7 @@
 				<div class="row search-form-default">
 					<div class="col-md-12">
 							<div class="input-group">
-								<div class="input-cont">
+								<div class="input-cont" style="width: 50%">
 									<input type="text" placeholder="Hall" name="searchfunction1" class="form-control"/>
 									<input type="text" placeholder="Status" name="searchfunction2" class="form-control"/>
 								</div>
