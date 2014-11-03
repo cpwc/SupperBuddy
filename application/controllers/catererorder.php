@@ -20,6 +20,34 @@ class Catererorder extends CI_Controller {
 		$this->load->view('caterer_order_view', $data);
 	}
 
+	public function search()
+	{
+		if ($this->input->server('REQUEST_METHOD') == 'POST') {
+			$this->form_validation->set_rules('searchfunction', 'SearchFunction', 'required');
+
+			if ($this->form_validation->run() == FALSE) {
+				redirect('/catererorder/caterer_order_view'); // TODO: Show validation message.
+			} else {
+				$this->_search();
+			}
+		} else {
+			$caterer = $this->session->userdata('caterer');
+			$caterer_id = $caterer['id'];
+
+			if (!$caterer_id) {
+				redirect('/caterer/login');
+				return;
+			}
+			
+			$sql = "SELECT * FROM `order` WHERE order.caterer_id = " . $caterer_id;
+			$orders = $this->db->query($sql);
+
+			$data['orders'] = $orders->result();
+
+			$this->load->view('caterer_order_view', $data);
+		}
+	}
+
 	public function details($id)
 	{
 	 	$sql = "SELECT student.name as student_name, matric_no, email, phone, residence.name as residence_name FROM `student`, `residence`, `order` WHERE student.residence_id = residence.id AND student.matric_no = order.created_by AND order.id = " . $id . " LIMIT 1";
@@ -32,6 +60,23 @@ class Catererorder extends CI_Controller {
 		$data['details'] = $details->result();
 
 		$this->load->view('caterer_order_detail', $data);
+	}
+
+	private function _search()
+	{
+		$caterer = $this->session->userdata('caterer');
+		$caterer_id = $caterer['id'];
+
+		if (!$caterer_id) {
+			redirect('/caterer/login');
+			return;
+		}
+
+		$sql = "SELECT * FROM `order` WHERE order.status = " . $this->input->post('searchfunction');
+		$orders = $this->db->query($sql);
+		$data['orders'] = $orders->result();
+
+		$this->load->view('caterer_order_view', $data);
 	}
 
 }
