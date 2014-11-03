@@ -521,11 +521,11 @@
 						</div>
 						<div class="portlet-body form">
 							<!-- BEGIN FORM-->
-							<form action="#" id="form-username" class="form-horizontal form-bordered">
+							
 								<div class="form-body">
 									<div class="form-group">
 										<label class="control-label col-md-3"></label>
-										<div class="col-md-4">
+										<div class="col-md-12">
 											<div class="input-group">
 												<div class="input-cont">
 													<input type="text" placeholder="Search by Hall.." class="form-control"/>
@@ -535,7 +535,7 @@
 									</div>
 									<div class="form-group">
 										<label class="control-label col-md-3"></label>
-										<div class="col-md-4">
+										<div class="col-md-12">
 											<div class="input-group">
 												<div class="input-cont">
 													<input type="text" placeholder="Search by Status.." class="form-control"/>
@@ -554,7 +554,7 @@
 										</div>
 									</div>
 								</div>
-							</form>
+						
 							<!-- END FORM-->
 						</div>
 					</div>
