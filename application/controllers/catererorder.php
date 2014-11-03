@@ -72,11 +72,9 @@ class Catererorder extends CI_Controller {
 			return;
 		}
 
-		$sql = "SELECT * FROM `order` WHERE order.status = " . $this->input->post('searchfunction');
+		$sql = "SELECT * FROM `order` WHERE order.caterer_id = " . $caterer_id . " AND order.status = " . $this->input->post('searchfunction');
 		$orders = $this->db->query($sql);
 		$data['orders'] = $orders->result();
-
-		$this->load->view('caterer_order_view', $data);
 	}
 
 }
