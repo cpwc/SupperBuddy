@@ -505,35 +505,60 @@
 			</div>
 			<!-- END PAGE HEADER-->
 				<!-- BEGIN PAGE CONTENT-->
-				<div class="table-responsive">
-								<table class="table table-hover table-bordered table-striped">
-								<thead>
-								<tr>
-									<td>
-									<div class="input-group">
-										<div class="input-cont">
-										<input type="text" placeholder="Hall" class="form-control"/>
-										</div>
-									</div>
-									</td>
-									<td>
-									<div class="input-group">
-										<div class="input-cont">
-										<input type="text" placeholder="Status" class="form-control"/>
-										</div>
-									</div>
-									</td>
-									<td>
-										 <span class="input-group-btn">
-										<input type="submit" value="Search" class="btn green-haze">
-										Search &nbsp; <i class="m-icon-swapright m-icon-white"></i>
-										</input>
-										</span>
-									</td>	
-								</tr>
-								</thead>
-								</table>
+				<!-- START SEARCH -->
+				<div class="row">
+				<div class="col-md-12">
+					<!-- BEGIN PORTLET-->
+					<div class="portlet box blue-hoki">
+						<div class="portlet-title">
+							<div class="caption">
+								<i class="fa fa-gift"></i>Search Tools
 							</div>
+							<div class="tools">
+								<a href="javascript:;" class="collapse">
+								</a>
+							</div>
+						</div>
+						<div class="portlet-body form">
+							<!-- BEGIN FORM-->
+							<form action="#" id="form-username" class="form-horizontal form-bordered">
+								<div class="form-body">
+									<div class="form-group">
+										<label class="control-label col-md-3"></label>
+										<div class="col-md-4">
+											<div class="input-group" style="text-align:left">
+												<input type="text" class="form-control" name="hall" placeholder = "Search by Hall..">
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-md-3"></label>
+										<div class="col-md-4">
+											<div class="input-icon right">
+												<input type="text" class="form-control" name="status" placeholder = "Search by Status..">
+											</div>
+											<div class="help-block">
+												 OPEN/CLOSE
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-actions">
+									<div class="row">
+										<div class="col-md-offset-3 col-md-9">
+											<button type="submit" class="btn purple"><i class="fa fa-search"></i> Search</button>
+										</div>
+									</div>
+								</div>
+							</form>
+							<!-- END FORM-->
+						</div>
+					</div>
+					<!-- END PORTLET-->
+				</div>
+			</div>
+
+				<!-- END SEARCH -->
 				<div class="row search-form-default">
 					<div class="col-md-12">
 						<form action="#">
