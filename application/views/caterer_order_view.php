@@ -9,7 +9,7 @@
 		<div class="page-content">
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			Caterer <small>View Order</small>
+				Caterer <small>View Order</small>
 			</h3>
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
@@ -28,10 +28,9 @@
 				</ul>
 			</div>
 			<!-- END PAGE HEADER-->
-				<!-- BEGIN PAGE CONTENT-->
-				<!-- START SEARCH -->
-				<?php echo form_open('catererorder/search'); ?>
-				<div class="row">
+			<!-- BEGIN PAGE CONTENT-->
+			<!-- START SEARCH -->
+			<div class="row">
 				<div class="col-md-12">
 					<!-- BEGIN PORTLET-->
 					<div class="portlet box blue-hoki">
@@ -46,94 +45,97 @@
 						</div>
 						<div class="portlet-body form">
 							<!-- BEGIN FORM-->
-								<div class="form-body">
-									<div class="row search-form-default">
-										<div class="col-md-12">
-											
-												<div class="input-group" style="width:50%">
-													<div class="input-cont">
-														<input type="text" placeholder="Search by Hall.." name="hall" class="form-control"/>
-													</div>
-												</div>
+							<?php echo form_open('caterer/orders'); ?>
+							<div class="form-body">
+								<div class="row search-form-default">
+									<div class="col-md-12">
+
+										<div class="input-group" style="width:50%">
+											<div class="input-cont">
+											<input type="text" placeholder="Residence" name="search[residence]" class="form-control"/>
+											</div>
+										</div>
 										
-										</div>
 									</div>
-									<br>
-									<div class="row search-form-default">
-										<div class="col-md-12">
-												<div class="input-group" style="width:50%">
-													<div class="input-cont" >
-														<input type="text" placeholder="Search by Status.." name="status" class="form-control"/>
-													</div>
-												</div>
+								</div>
+								<br>
+								<div class="row search-form-default">
+									<div class="col-md-12">
+										<div class="input-group" style="width:50%">
+											<div class="input-cont" >
+												<input type="text" placeholder="Status" name="search[status]" class="form-control"/>
+											</div>
 										</div>
 									</div>
 								</div>
-								<div class="form-actions">
-									<div class="row">
-										<div class="col-md-offset-3 col-md-9">
-											<input type="submit" value="Search" class="btn purple"><i class="fa fa-search"></i></input>
-										</div>
+							</div>
+							<div class="form-actions">
+								<div class="row">
+									<div class="col-md-offset-3 col-md-9">
+										<input type="submit" value="Search" class="btn purple"><i class="fa fa-search"></i></input>
 									</div>
 								</div>
-						
+							</div>
+							<?php echo form_close(); ?>
 							<!-- END FORM-->
 						</div>
 					</div>
 					<!-- END PORTLET-->
 				</div>
 			</div>
-				<!-- END SEARCH -->
-				<div class="row">
-					<div class="col-md-12 col-sm-12">
-						<div class="portlet blue-hoki box">
-							<div class="portlet-title">
-								<div class="caption">
-									<i class="fa fa-cogs"></i>Order Information
-								</div>
+			<!-- END SEARCH -->
+			<div class="row">
+				<div class="col-md-12 col-sm-12">
+					<div class="portlet blue-hoki box">
+						<div class="portlet-title">
+							<div class="caption">
+								<i class="fa fa-cogs"></i>Order Information
 							</div>
-							<div class="portlet-body">
-								<div class="table-responsive">
+						</div>
+						<div class="portlet-body">
+							<div class="table-responsive">
 								<table class="table table-hover table-bordered table-striped">
-								<thead>
-								<tr>
-									<th>
-										 Order ID
-									</th>
-									<th>
-										 Status
-									</th>
-									<th>
-										 Created by
-									</th>
-									<th>
-										 Created at
-									</th>
-									<th>
-										 Updated at
-									</th>		
-								</tr>
-								</thead>
-								<tbody>
-									<?php foreach ($orders as $order) { ?>
-									<tr>
-										<td><?php echo $order->id; ?></td>
-										<td><?php echo $order->status; ?></td>
-										<td><?php echo $order->created_by; ?></td>
-										<td><?php echo $order->created_at; ?></td>
-										<td><?php echo $order->updated_at; ?></td>
-									</tr>
-									<?php } ?>
-								</tbody>
+									<thead>
+										<tr>
+											<th>
+												Order ID
+											</th>
+											<th>
+												Residence
+											</th>
+											<th>
+												Created by
+											</th>
+											<th>
+												Status
+											</th>
+											<th>
+												Created at
+											</th>
+											<th>
+												Updated at
+											</th>		
+										</tr>
+									</thead>
+									<tbody>
+										<?php foreach ($orders as $order) { ?>
+										<tr>
+											<td><?php echo $order->id; ?></td>
+											<td><?php echo $order->residence_name; ?></td>
+											<td><?php echo $order->name; ?></td>
+											<td><?php echo $order->status; ?></td>
+											<td><?php echo $order->created_at; ?></td>
+											<td><?php echo $order->updated_at; ?></td>
+										</tr>
+										<?php } ?>
+									</tbody>
 								</table>
-							</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<!-- END PAGE CONTENT-->
-				<!-- <input type="hidden" name="caterer_id" value="" id="caterer-id"> -->
-				<?php echo form_close(); ?>
+			</div>
+			<!-- END PAGE CONTENT-->
 		</div>
 	</div>
 	<!-- END CONTENT -->

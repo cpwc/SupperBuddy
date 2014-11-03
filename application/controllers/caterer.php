@@ -108,7 +108,7 @@ class Caterer extends CI_Controller
 					'id'  => $user->id,
 					'name' => $user->name,
 					'email' => $user->email,
-				);
+					);
 				$this->session->set_userdata('caterer', $session);
 				return true;
 			} else {
@@ -117,6 +117,51 @@ class Caterer extends CI_Controller
 		}
 
 		return false;
+	}
+
+	public function orders()
+	{
+		$caterer = $this->session->userdata('caterer');
+		$caterer_id = $caterer['id'];
+
+		if (!$caterer_id) {
+			redirect('/caterer/login');
+			return;
+		}
+
+		if ($this->input->server('REQUEST_METHOD') == 'POST') {
+			// $this->form_validation->set_rules('search', 'Search', 'required');
+			// // $this->form_validation->set_rules('search[residence]', 'Residence', '');
+			// // $this->form_validation->set_rules('status', 'Status', '');
+			
+			// if ($this->form_validation->run() == FALSE) {
+			// 	$this->load->view('caterer_order_view', $data);
+			// 	return;
+			// }
+
+			$residence = $this->input->post('search[residence]');
+			$status = $this->input->post('search[status]');
+
+			$params = array(
+				'residence.name' => $this->input->post('search[residence]'),
+				'order.status' => $this->input->post('search[status]'),
+				'caterer_id' => $caterer_id,
+				);
+
+			$sql = "SELECT order.id, residence.name as `residence_name`, student.name, status, created_at, updated_at FROM `order`, `student`, `residence` WHERE order.created_by = student.matric_no AND student.residence_id = residence.id AND (residence.name = ? OR order.status = ?) AND caterer_id = ?";
+			$orders = $this->db->query($sql, $params);
+			$data['orders'] = $orders->result();
+
+			$this->load->view('caterer_order_view', $data);
+		} else {
+			$sql = "SELECT order.id, residence.name as `residence_name`, student.name, status, created_at, updated_at FROM `order`, `student`, `residence` WHERE order.created_by = student.matric_no AND student.residence_id = residence.id AND caterer_id = " . $caterer_id;
+		//$sql = "SELECT * FROM `order` WHERE order.caterer_id = " . $caterer_id;
+			$orders = $this->db->query($sql);
+
+			$data['orders'] = $orders->result();
+			
+			$this->load->view('caterer_order_view', $data);
+		}
 	}
 	
 	private function _register()
