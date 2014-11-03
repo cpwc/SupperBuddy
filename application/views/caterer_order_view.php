@@ -548,7 +548,7 @@
 								<div class="form-actions">
 									<div class="row">
 										<div class="col-md-offset-3 col-md-9">
-											<input type="submit" value="Search" class="btn purple"><i class="fa fa-search"></i> Search</input>
+											<input type="submit" value="Search" class="btn purple"><i class="fa fa-search"></i></input>
 										</div>
 									</div>
 								</div>
