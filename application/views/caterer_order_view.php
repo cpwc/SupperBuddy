@@ -561,23 +561,6 @@
 			</div>
 
 				<!-- END SEARCH -->
-				<div class="row search-form-default">
-					<div class="col-md-12">
-						<form action="#">
-							<div class="input-group">
-								<div class="input-cont">
-									<input type="text" placeholder="Search by Hall/Status.." class="form-control"/>
-								</div>
-								<span class="input-group-btn">
-								<button type="button" class="btn green-haze">
-								Search &nbsp; <i class="m-icon-swapright m-icon-white"></i>
-								</button>
-								</span>
-							</div>
-						</form>
-					</div>
-				</div>
-				</br>
 				<div class="row">
 					<div class="col-md-12 col-sm-12">
 						<div class="portlet blue-hoki box">
