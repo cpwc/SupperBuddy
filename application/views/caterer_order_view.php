@@ -526,16 +526,30 @@
 									<div class="form-group">
 										<label class="control-label col-md-3"></label>
 										<div class="col-md-4">
-											<div class="input-group" style="text-align:left">
-												<input type="text" class="form-control" name="hall" placeholder = "Search by Hall..">
+											<div class="input-group">
+												<div class="input-cont">
+													<input type="text" placeholder="Search by Hall/Status.." class="form-control"/>
+												</div>
+												<span class="input-group-btn">
+												<button type="button" class="btn green-haze">
+												Search &nbsp; <i class="m-icon-swapright m-icon-white"></i>
+												</button>
+												</span>
 											</div>
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="control-label col-md-3"></label>
 										<div class="col-md-4">
-											<div class="input-icon right">
-												<input type="text" class="form-control" name="status" placeholder = "Search by Status..">
+											<div class="input-group">
+												<div class="input-cont">
+													<input type="text" placeholder="Search by Hall/Status.." class="form-control"/>
+												</div>
+												<span class="input-group-btn">
+												<button type="button" class="btn green-haze">
+												Search &nbsp; <i class="m-icon-swapright m-icon-white"></i>
+												</button>
+												</span>
 											</div>
 											<div class="help-block">
 												 OPEN/CLOSE
