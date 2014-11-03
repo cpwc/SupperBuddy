@@ -509,23 +509,27 @@
 								<table class="table table-hover table-bordered table-striped">
 								<thead>
 								<tr>
-									<th>
+									<td>
+									<div class="input-group">
 										<div class="input-cont">
-										<input type="text" placeholder="Search by Hall/Status.." class="form-control"/>
+										<input type="text" placeholder="Hall" class="form-control"/>
 										</div>
-									</th>
-									<th>
-										 <div class="input-cont">
-										<input type="text" placeholder="Search by Hall/Status.." class="form-control"/>
+									</div>
+									</td>
+									<td>
+									<div class="input-group">
+										<div class="input-cont">
+										<input type="text" placeholder="Status" class="form-control"/>
 										</div>
-									</th>
-									<th>
+									</div>
+									</td>
+									<td>
 										 <span class="input-group-btn">
 										<input type="submit" value="Search" class="btn green-haze">
 										Search &nbsp; <i class="m-icon-swapright m-icon-white"></i>
 										</input>
 										</span>
-									</th>	
+									</td>	
 								</tr>
 								</thead>
 								</table>
