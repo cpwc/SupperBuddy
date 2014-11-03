@@ -522,7 +522,6 @@
 						</div>
 						<div class="portlet-body form">
 							<!-- BEGIN FORM-->
-							
 								<div class="form-body">
 									<div class="row search-form-default">
 										<div class="col-md-12">
@@ -549,7 +548,7 @@
 								<div class="form-actions">
 									<div class="row">
 										<div class="col-md-offset-3 col-md-9">
-											<button type="submit" class="btn purple"><i class="fa fa-search"></i> Search</button>
+											<input type="submit" value="Search" class="btn purple"><i class="fa fa-search"></i> Search</input>
 										</div>
 									</div>
 								</div>
