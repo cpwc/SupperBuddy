@@ -76,7 +76,7 @@ class Catererorder extends CI_Controller {
 		$orders = $this->db->query($sql);
 		$data['orders'] = $orders->result();
 
-		$this->load->view('caterer_order_view', $data);
+		//$this->load->view('caterer_order_view', $data);
 	}
 
 }
