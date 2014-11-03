@@ -525,24 +525,22 @@
 								<div class="form-body">
 									<div class="row search-form-default">
 										<div class="col-md-12">
-											<form action="#">
-												<div class="input-group">
+											
+												<div class="input-group" style="width:50%">
 													<div class="input-cont">
 														<input type="text" placeholder="Search by Hall.." class="form-control"/>
 													</div>
 												</div>
-											</form>
+										
 										</div>
 									</div>
 									<div class="row search-form-default">
 										<div class="col-md-12">
-											<form action="#">
 												<div class="input-group">
-													<div class="input-cont">
-														<input type="text" placeholder="Search by Status.." class="form-control"/>
+													<div class="input-cont" style="width:50%">
+														<input type="text" placeholder="Search by Hall/Status.." class="form-control"/>
 													</div>
 												</div>
-											</form>
 										</div>
 									</div>
 								</div>
