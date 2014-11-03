@@ -505,6 +505,31 @@
 			</div>
 			<!-- END PAGE HEADER-->
 				<!-- BEGIN PAGE CONTENT-->
+				<div class="table-responsive">
+								<table class="table table-hover table-bordered table-striped">
+								<thead>
+								<tr>
+									<th>
+										<div class="input-cont">
+										<input type="text" placeholder="Search by Hall/Status.." class="form-control"/>
+										</div>
+									</th>
+									<th>
+										 <div class="input-cont">
+										<input type="text" placeholder="Search by Hall/Status.." class="form-control"/>
+										</div>
+									</th>
+									<th>
+										 <span class="input-group-btn">
+										<input type="submit" value="Search" class="btn green-haze">
+										Search &nbsp; <i class="m-icon-swapright m-icon-white"></i>
+										</input>
+										</span>
+									</th>	
+								</tr>
+								</thead>
+								</table>
+							</div>
 				<div class="row search-form-default">
 					<div class="col-md-12">
 						<form action="#">
