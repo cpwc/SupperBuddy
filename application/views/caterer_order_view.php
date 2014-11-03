@@ -508,13 +508,15 @@
 				<!-- BEGIN PAGE CONTENT-->
 				<div class="row search-form-default">
 					<div class="col-md-12">
-						
 							<div class="input-group">
-								<div class="input-cont">
-									<input type="text" placeholder="Search by Hall/Status.." name="searchfunction" class="form-control"/>
+								<div class="input-cont" style="width: 50%">
+									<input type="text" placeholder="Hall" name="searchfunction1" class="form-control"/>
+								</div>
+								<div class="input-cont" style="width: 50%">
+									<input type="text" placeholder="Status" name="searchfunction2" class="form-control"/>
 								</div>
 								<span class="input-group-btn">
-								<input type="submit" class="btn green-haze">
+								<input type="submit" value="Search nbsp;" class="btn green-haze">
 								Search &nbsp; <i class="m-icon-swapright m-icon-white"></i>
 								</input>
 								</span>
