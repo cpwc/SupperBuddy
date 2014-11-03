@@ -106,7 +106,8 @@ class Caterer extends CI_Controller
 			if ($this->phpass->check($password, $hashed)) {
 				$session = array(
 					'id'  => $user->id,
-					'email'     => $user->email
+					'name' => $user->name,
+					'email' => $user->email,
 				);
 				$this->session->set_userdata('caterer', $session);
 				return true;
