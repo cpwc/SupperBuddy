@@ -26,7 +26,7 @@ class Catererorder extends CI_Controller {
 			//$this->form_validation->set_rules('hall', 'Hall', 'required');
 
 			if ($this->form_validation->run() == FALSE) {
-				redirect('/catererorder/caterer_order_view'); // TODO: Show validation message.
+				redirect('/catererorder'); // TODO: Show validation message.
 			} else {
 				$this->_search();
 			}
