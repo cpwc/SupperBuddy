@@ -523,29 +523,38 @@
 							<!-- BEGIN FORM-->
 							
 								<div class="form-body">
-									<div class="form-group">
-										<label class="control-label col-md-3"></label>
-										<div class="col-md-12">
-											<div class="input-group">
-												<div class="input-cont">
-													<input type="text" placeholder="Search by Hall.." class="form-control"/>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="control-label col-md-3"></label>
-										<div class="col-md-12">
-											<div class="input-group">
-												<div class="input-cont">
-													<input type="text" placeholder="Search by Status.." class="form-control"/>
-												</div>
-											</div>
-											<div class="help-block">
-												 OPEN/CLOSE
-											</div>
-										</div>
-									</div>
+									<div class="row search-form-default">
+					<div class="col-md-12">
+						<form action="#">
+							<div class="input-group">
+								<div class="input-cont">
+									<input type="text" placeholder="Search by Hall/Status.." class="form-control"/>
+								</div>
+								<span class="input-group-btn">
+								<button type="button" class="btn green-haze">
+								Search &nbsp; <i class="m-icon-swapright m-icon-white"></i>
+								</button>
+								</span>
+							</div>
+						</form>
+					</div>
+				</div>
+									<div class="row search-form-default">
+					<div class="col-md-12">
+						<form action="#">
+							<div class="input-group">
+								<div class="input-cont">
+									<input type="text" placeholder="Search by Hall/Status.." class="form-control"/>
+								</div>
+								<span class="input-group-btn">
+								<button type="button" class="btn green-haze">
+								Search &nbsp; <i class="m-icon-swapright m-icon-white"></i>
+								</button>
+								</span>
+							</div>
+						</form>
+					</div>
+				</div>
 								</div>
 								<div class="form-actions">
 									<div class="row">
