@@ -512,6 +512,20 @@
 								<div class="caption">
 									<i class="fa fa-cogs"></i>Order Information
 								</div>
+								<div class="actions">
+									<form action="#">
+									  <div class="input-group">
+										<div class="input-cont">
+											<input type="text" placeholder="Search..." class="form-control"/>
+											</div>
+											<span class="input-group-btn">
+											<button type="button" class="sbtn green-haze">
+											Search &nbsp; <i class="m-icon-swapright m-icon-white"></i>
+											</button>
+											</span>
+									  </div>
+									</form>
+								</div>
 							</div>
 							<div class="portlet-body">
 								<div class="table-responsive">
