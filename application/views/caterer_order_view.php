@@ -560,8 +560,6 @@
 					<!-- END PORTLET-->
 				</div>
 			</div>
-			<?php echo form_close(); ?>
-
 				<!-- END SEARCH -->
 				<div class="row">
 					<div class="col-md-12 col-sm-12">
@@ -612,6 +610,7 @@
 				</div>
 				<!-- END PAGE CONTENT-->
 				<!-- <input type="hidden" name="caterer_id" value="" id="caterer-id"> -->
+				<?php echo form_close(); ?>
 		</div>
 	</div>
 	<!-- END CONTENT -->
