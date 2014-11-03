@@ -506,13 +506,14 @@
 			<!-- END PAGE HEADER-->
 				<!-- BEGIN PAGE CONTENT-->
 				<!-- START SEARCH -->
+				<?php echo form_open('catererorder/search'); ?>
 				<div class="row">
 				<div class="col-md-12">
 					<!-- BEGIN PORTLET-->
 					<div class="portlet box blue-hoki">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-gift"></i>Search Tools
+								<i class="fa fa-search"></i>Search Tools
 							</div>
 							<div class="tools">
 								<a href="javascript:;" class="collapse">
@@ -528,7 +529,7 @@
 											
 												<div class="input-group" style="width:50%">
 													<div class="input-cont">
-														<input type="text" placeholder="Search by Hall.." class="form-control"/>
+														<input type="text" placeholder="Search by Hall.." name="hall" class="form-control"/>
 													</div>
 												</div>
 										
@@ -539,7 +540,7 @@
 										<div class="col-md-12">
 												<div class="input-group" style="width:50%">
 													<div class="input-cont" >
-														<input type="text" placeholder="Search by Status.." class="form-control"/>
+														<input type="text" placeholder="Search by Status.." name="status" class="form-control"/>
 													</div>
 												</div>
 										</div>
@@ -559,6 +560,7 @@
 					<!-- END PORTLET-->
 				</div>
 			</div>
+			<?php echo form_close(); ?>
 
 				<!-- END SEARCH -->
 				<div class="row">

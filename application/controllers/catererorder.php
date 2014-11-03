@@ -23,7 +23,7 @@ class Catererorder extends CI_Controller {
 	public function search()
 	{
 		if ($this->input->server('REQUEST_METHOD') == 'POST') {
-			$this->form_validation->set_rules('searchfunction', 'SearchFunction', 'required');
+			//$this->form_validation->set_rules('hall', 'Hall', 'required');
 
 			if ($this->form_validation->run() == FALSE) {
 				redirect('/catererorder/caterer_order_view'); // TODO: Show validation message.
@@ -72,7 +72,7 @@ class Catererorder extends CI_Controller {
 			return;
 		}
 
-		$sql = "SELECT * FROM `order` WHERE order.status = '" . $this->input->post('searchfunction') . "' AND order.caterer_id = '" . $caterer_id . "'  ";
+		$sql = "SELECT * FROM `order` WHERE order.status = '" . $this->input->post('status') . "' AND order.caterer_id = '" . $caterer_id . "'  ";
 		$orders = $this->db->query($sql);
 		$data['orders'] = $orders->result();
 
