@@ -37,6 +37,9 @@
 							<div class="caption">
 								<i class="fa fa-cogs"></i> Food Information
 							</div>
+							<div class="actions btn-set">
+								<?php echo anchor('food', '<i class="fa fa-reply"></i> Back', array('class' => 'btn yellow')); ?>
+							</div>
 						</div>
 						<div class="portlet-body form">
 							<div class="form-body">
