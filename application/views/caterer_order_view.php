@@ -128,7 +128,9 @@
 									<tbody>
 										<?php foreach ($orders as $order) { ?>
 										<tr>
-											<td><?php echo $order->id; ?></td>
+											<td>
+												<?php echo anchor('caterer/orders/' . $order->id, $order->id); ?>
+											</td>
 											<td><?php echo $order->residence_name; ?></td>
 											<td><?php echo $order->name; ?></td>
 											<td><?php echo $order->status; ?></td>
