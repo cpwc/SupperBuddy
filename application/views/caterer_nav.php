@@ -32,7 +32,7 @@
 				<!-- BEGIN USER LOGIN DROPDOWN -->
 				<li class="dropdown dropdown-user">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<span class="username username-hide-on-mobile"><?php echo $this->session->userdata('caterer')['name']; ?></span>
+					<span class="username username-hide-on-mobile"><?php echo $this->session->userdata('caterer'); ?></span>
 					<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu">
