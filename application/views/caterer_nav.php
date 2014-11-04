@@ -16,6 +16,9 @@
 				<li class="classic-menu-dropdown active">
 					<?php echo anchor('caterer/orders', 'Orders'); ?>
 				</li>
+				<li class="classic-menu-dropdown">
+					<?php echo anchor('food', 'Food'); ?>
+				</li>
 			</ul>
 		</div>
 		<!-- END HORIZANTAL MENU -->

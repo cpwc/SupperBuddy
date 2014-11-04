@@ -29,6 +29,8 @@
 			</div>
 			<!-- END PAGE HEADER-->
 				<!-- BEGIN PAGE CONTENT-->
+				<?php $this->load->view('caterer_flash_message') ?>
+
 				<div class="row">
 					<div class="col-md-12 col-sm-12">
 						<div class="portlet blue-hoki box">
@@ -45,7 +47,7 @@
 									<th>
 										 Food
 									</th>
-									<th>
+									<th class="right">
 										 Price
 									</th>
 									<th>
@@ -66,9 +68,8 @@
 										<td><?php echo $food->created_at; ?></td>
 										<td><?php echo $food->updated_at; ?></td>
 										<td> 
-										<button class="btn btn-sm yellow filter-submit margin-bottom"><i class="fa fa-submit"></i> Edit</button>
-																				
-										<a href="/index.php/food/delete/<?php echo $food->id; ?>" class="btn btn-sm red filter-cancel"><i class="fa fa-times"></i> Remove</a>
+											<?php echo anchor('food/edit/' . $food->id, 'Edit', array('class' => 'btn btn-sm yellow filter-submit')); ?>
+											<?php echo anchor('food/delete/' . $food->id, '<i class="fa fa-times"></i> Remove', array('class' => 'btn btn-sm red filter-cancel', 'onclick' => "return confirm('Are you sure want to delete?');")) ?>
 										</td>
 									</tr>
 									<?php } ?>

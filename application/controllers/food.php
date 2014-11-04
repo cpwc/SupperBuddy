@@ -17,7 +17,7 @@ class Food extends CI_Controller {
 
 		$data['foods'] = $foods->result();
 
-		$this->load->view('food_view', $data);
+		$this->load->view('caterer_food_view', $data);
 	}
 
 	public function create()
@@ -32,7 +32,27 @@ class Food extends CI_Controller {
 				$this->_create();
 			}
 		} else {
-			$this->load->view('caterer_food');
+			$this->load->view('caterer_food_create');
+		}
+	}
+
+	public function edit($food_id)
+	{
+		if ($this->input->server('REQUEST_METHOD') == 'POST') {
+			$this->form_validation->set_rules('name', 'Name', 'required');
+			$this->form_validation->set_rules('price', 'Price', 'required');
+			
+			if ($this->form_validation->run() == FALSE) {
+				redirect('/food');
+			} else {
+				$this->_edit($food_id);
+			}
+		} else {
+			$sql = "SELECT * FROM `food` WHERE id = " . $food_id;
+			$food = $this->db->query($sql);
+			$data['food'] = $food->row();
+
+			$this->load->view('caterer_food_edit', $data);
 		}
 	}
 
@@ -43,16 +63,30 @@ class Food extends CI_Controller {
 			$foods = $this->db->query($sql)->row();
 
 			header('Content-Type: application/json');
-    		echo json_encode($foods);
+			echo json_encode($foods);
 		}
 	}
 
-	public function delete($id)
+	public function delete($food_id)
 	{
-		$sql = "UPDATE `food` SET food.is_deleted = 1 WHERE food.id = " . $id;
+		$sql = "UPDATE `food` SET food.is_deleted = 1 WHERE food.id = " . $food_id;
 		$this->db->query($sql);
 
-		echo $this->db->affected_rows();
+		if ($this->db->affected_rows() > 0) {
+			$sql = "SELECT * FROM `food` WHERE food.id = " . $food_id;
+			$food = $this->db->query($sql);
+
+			$this->session->set_flashdata('status', 1);
+			$this->session->set_flashdata('message', 'Food [' . $food->row()->name . '] deleted successfully.');
+		} else {
+			$sql = "SELECT * FROM `food` WHERE food.id = " . $food_id;
+			$food = $this->db->query($sql);
+
+			$this->session->set_flashdata('status', 0);
+			$this->session->set_flashdata('message', 'Error deleting Food [' . $food->row()->name . '].');
+		}
+ 
+		redirect('/food');
 	}
 
 	private function _create()
@@ -80,6 +114,34 @@ class Food extends CI_Controller {
 		$this->db->query($sql, $params);
 		
 		echo $this->db->affected_rows();
+	}
+
+	private function _edit($food_id)
+	{
+		$params = array(
+				'name' => $this->input->post('name'),
+				'price' => $this->input->post('price'),
+				'id' => $food_id
+			);
+
+		$sql = "UPDATE `food` SET food.name = ?, food.price = ? WHERE food.id = ?";
+		$this->db->query($sql, $params);
+
+		if ($this->db->affected_rows() > 0) {
+			$sql = "SELECT * FROM `food` WHERE food.id = " . $food_id;
+			$food = $this->db->query($sql);
+
+			$this->session->set_flashdata('status', 1);
+			$this->session->set_flashdata('message', 'Food [' . $food->row()->name . '] edited successfully.');
+		} else {
+			$sql = "SELECT * FROM `food` WHERE food.id = " . $food_id;
+			$food = $this->db->query($sql);
+
+			$this->session->set_flashdata('status', 0);
+			$this->session->set_flashdata('message', 'Error editing Food [' . $food->row()->name . '].');
+		}
+
+		redirect('/food');
 	}
 
 }
