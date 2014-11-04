@@ -9,7 +9,7 @@
 		<div class="page-content">
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			Caterer <small>Edit Food</small>
+				Caterer <small>Edit Food</small>
 			</h3>
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
@@ -28,19 +28,20 @@
 				</ul>
 			</div>
 			<!-- END PAGE HEADER-->
-			<?php echo form_open('food/edit/' . $food->id); ?>
-				<!-- BEGIN PAGE CONTENT-->
-				<div class="row">
-					<div class="col-md-12 col-sm-12">
-						<div class="portlet blue-hoki box">
-							<div class="portlet-title">
-								<div class="caption">
-									<i class="fa fa-cogs"></i>Food Information
-								</div>
+			<?php echo form_open('food/edit/' . $food->id, array('class' => 'form-horizontal')); ?>
+			<!-- BEGIN PAGE CONTENT-->
+			<div class="row">
+				<div class="col-md-12">
+					<div class="portlet blue-hoki box">
+						<div class="portlet-title">
+							<div class="caption">
+								<i class="fa fa-cogs"></i> Food Information
 							</div>
-							<div class="portlet-body">
+						</div>
+						<div class="portlet-body form">
+							<div class="form-body">
 								<div class="form-group">
-									<div class="col-md-3">
+									<div class="col-md-3 control-label">
 										Food Name:
 									</div>
 									<div class="col-md-9">
@@ -50,29 +51,29 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<div class="col-md-3">
-										 Price:
+									<div class="col-md-3 control-label">
+										Price:
 									</div>
-									<div class="col-md-7">
-										 <div class="input-icon right">
+									<div class="col-md-9">
+										<div class="input-icon right">
 											<input type="text" class="form-control" name="price" id="food_price" value="<?php echo $food->price; ?>">
 										</div>
 									</div>
 								</div>
-								<div class="row static-info">
-									<div class="col-md-2 name">
-										
-									</div>
-									<div class="col-md-7 value">
-										<input type="submit" class="btn default" value="Edit Food">
+							</div>
+							<div class="form-actions">
+								<div class="row">
+									<div class="col-md-offset-3 col-md-9">
+										<input type="submit" class="btn green" value="Edit Food">
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<!-- END PAGE CONTENT-->
-				<!-- <input type="hidden" name="caterer_id" value="" id="caterer-id"> -->
+			</div>
+			<!-- END PAGE CONTENT-->
+			<!-- <input type="hidden" name="caterer_id" value="" id="caterer-id"> -->
 			<?php echo form_close(); ?>
 		</div>
 	</div>
