@@ -139,25 +139,28 @@ class Caterer extends CI_Controller
 			// 	return;
 			// }
 
-			$residence = $this->input->post('search[residence]');
-			$status = $this->input->post('search[status]');
+			$residence = $this->input->post('residence');
+			$status = $this->input->post('status');
 
 			$params = array(
-				'residence.name' => $this->input->post('search[residence]'),
-				'order.status' => $this->input->post('search[status]'),
+				'residence.name' => $this->input->post('residence'),
+				'order.status' => $this->input->post('status'),
 				'caterer_id' => $caterer_id,
 				);
 
-			$sql = "SELECT order.id, residence.name as `residence_name`, student.name, status, created_at, updated_at FROM `order`, `student`, `residence` WHERE order.created_by = student.matric_no AND student.residence_id = residence.id AND (residence.name = ? OR order.status = ?) AND caterer_id = ?";
+			if ($residence && $status) {
+				$sql = "SELECT order.id, residence.name as `residence_name`, student.name, status, created_at, updated_at FROM `order`, `student`, `residence` WHERE order.created_by = student.matric_no AND student.residence_id = residence.id AND (residence.name = ? AND order.status = ?) AND caterer_id = ?";
+			} else {
+				$sql = "SELECT order.id, residence.name as `residence_name`, student.name, status, created_at, updated_at FROM `order`, `student`, `residence` WHERE order.created_by = student.matric_no AND student.residence_id = residence.id AND (residence.name = ? OR order.status = ?) AND caterer_id = ?";
+			}
+
 			$orders = $this->db->query($sql, $params);
 			$data['orders'] = $orders->result();
 
 			$this->load->view('caterer_order_view', $data);
 		} else {
 			$sql = "SELECT order.id, residence.name as `residence_name`, student.name, status, created_at, updated_at FROM `order`, `student`, `residence` WHERE order.created_by = student.matric_no AND student.residence_id = residence.id AND caterer_id = " . $caterer_id;
-		//$sql = "SELECT * FROM `order` WHERE order.caterer_id = " . $caterer_id;
 			$orders = $this->db->query($sql);
-
 			$data['orders'] = $orders->result();
 			
 			$this->load->view('caterer_order_view', $data);

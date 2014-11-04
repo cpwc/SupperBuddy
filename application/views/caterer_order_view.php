@@ -52,7 +52,7 @@
 
 										<div class="input-group" style="width:50%">
 											<div class="input-cont">
-											<input type="text" placeholder="Residence" name="search[residence]" class="form-control"/>
+											<input type="text" placeholder="Residence" name="residence" class="form-control"/>
 											</div>
 										</div>
 										
@@ -63,7 +63,7 @@
 									<div class="col-md-12">
 										<div class="input-group" style="width:50%">
 											<div class="input-cont" >
-												<input type="text" placeholder="Status" name="search[status]" class="form-control"/>
+												<input type="text" placeholder="Status" name="status" class="form-control"/>
 											</div>
 										</div>
 									</div>
