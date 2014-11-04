@@ -32,12 +32,12 @@
 				<!-- BEGIN USER LOGIN DROPDOWN -->
 				<li class="dropdown dropdown-user">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<span class="username username-hide-on-mobile"><?php echo $this->session->userdata('caterer'); ?></span>
+					<span class="username username-hide-on-mobile"><?php echo $this->session->userdata('caterer')['name']; ?></span>
 					<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu">
 						<li>
-							<a href="extra_profile.html">
+							<a href="#">
 							<i class="icon-user"></i> My Profile </a>
 						</li>
 						<li class="divider">
