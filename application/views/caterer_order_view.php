@@ -1,6 +1,6 @@
-<?php $this->load->view('header'); ?>
+<?php $this->load->view('caterer_header'); ?>
 
-<?php $this->load->view('nav'); ?>
+<?php $this->load->view('caterer_nav'); ?>
 
 <!-- BEGIN CONTAINER -->
 <div class="page-container">
@@ -152,4 +152,4 @@
 </div>
 <!-- END CONTAINER -->
 
-<?php $this->load->view('footer'); ?>
+<?php $this->load->view('caterer_footer'); ?>

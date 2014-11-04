@@ -14,7 +14,7 @@ class Caterer extends CI_Controller
 			redirect('/caterer/login');
 			return;
 		} else {
-			redirect('/catererorder');
+			redirect('/caterer/orders');
 			return;
 		}
 	}
@@ -33,7 +33,7 @@ class Caterer extends CI_Controller
 			}
 
 
-			redirect('/catererorder');
+			redirect('/caterer/orders');
 		} else {
 			$this->load->view('caterer_login');
 		}

@@ -14,10 +14,7 @@
 			<ul class="nav navbar-nav">
 				<!-- DOC: Remove data-hover="dropdown" and data-close-others="true" attributes below to disable the horizontal opening on mouse hover -->
 				<li class="classic-menu-dropdown active">
-					<a href="<?php echo base_url() . 'caterer/orders' ?>">
-					Orders <span class="selected">
-					</span>
-					</a>
+					<?php echo anchor('caterer/orders', 'Orders'); ?>
 				</li>
 			</ul>
 		</div>
@@ -32,8 +29,7 @@
 				<!-- BEGIN USER LOGIN DROPDOWN -->
 				<li class="dropdown dropdown-user">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<img alt="" class="img-circle" src="../../assets/admin/layout/img/avatar3_small.jpg"/>
-					<span class="username username-hide-on-mobile"><?php echo $this->session->userdata('name'); ?></span>
+					<span class="username username-hide-on-mobile"><?php echo $this->session->userdata('caterer')['name']; ?></span>
 					<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu">
@@ -44,8 +40,7 @@
 						<li class="divider">
 						</li>
 						<li>
-							<a href="<?php echo base_url() . 'caterer/logout' ?>">
-							<i class="icon-key"></i> Log Out </a>
+							<?php echo anchor('caterer/logout', '<i class="icon-key"></i> Log Out'); ?>
 						</li>
 					</ul>
 				</li>
