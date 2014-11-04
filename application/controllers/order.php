@@ -17,7 +17,7 @@ class Order extends CI_Controller {
 
 		$data['orders'] = $orders->result();
 
-		$this->load->view('order_view', $data);
+		$this->load->view('student_order_view', $data);
 	}
 
 	public function create()
@@ -43,7 +43,7 @@ class Order extends CI_Controller {
 			$caterers = $this->db->query($sql);
 			$data['caterers'] = $caterers->result();
 
-			$this->load->view('order_create', $data);
+			$this->load->view('student_order_create', $data);
 		}
 	}
 
@@ -65,7 +65,7 @@ class Order extends CI_Controller {
 			$suborders = $this->db->query($sql);
 			$data['suborders'] = $suborders->result();
 
-			$this->load->view('suborder', $data);
+			$this->load->view('student_suborder', $data);
 	}
 
 	public function suborderdetails($id)
@@ -78,7 +78,7 @@ class Order extends CI_Controller {
 		$foods = $this->db->query($sql);
 		$data['foods'] = $foods->result();
 
-		$this->load->view('suborder_details', $data);
+		$this->load->view('student_suborder_details', $data);
 	}
 
 	private function _create_order()
