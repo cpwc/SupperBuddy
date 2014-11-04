@@ -5,7 +5,7 @@
 		<!-- BEGIN LOGO -->
 		<div class="page-logo">
 			<a href="<?php echo base_url(); ?>">
-				<img src="/public/img/logo.png" alt="logo" class="logo-default"/>
+				<img src="/public/img/logo.jgp" alt="logo" class="logo-default"/>
 			</a>
 		</div>
 		<!-- END LOGO -->
