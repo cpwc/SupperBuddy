@@ -38,6 +38,9 @@
 								<div class="caption">
 									<i class="fa fa-cogs"></i>Food
 								</div>
+								<div class="actions btn-set">
+									<?php echo anchor('food/create', '<i class="fa fa-plus"></i> Create', array('class' => 'btn green')); ?>
+								</div>
 							</div>
 							<div class="portlet-body">
 								<div class="table-responsive">
@@ -47,7 +50,7 @@
 									<th>
 										 Food
 									</th>
-									<th class="right">
+									<th>
 										 Price
 									</th>
 									<th>
