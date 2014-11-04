@@ -42,7 +42,7 @@
 							<div class="form-body">
 								<div class="form-group">
 									<div class="col-md-3 control-label">
-										Food Name:
+										Name:
 									</div>
 									<div class="col-md-9">
 										<div class="input-icon right">

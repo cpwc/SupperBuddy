@@ -36,8 +36,13 @@ class Food extends CI_Controller {
 		}
 	}
 
-	public function edit($food_id)
+	public function edit($food_id = null)
 	{
+		if (empty($food_id)) {
+			redirect('/food');
+			return;
+		}
+
 		if ($this->input->server('REQUEST_METHOD') == 'POST') {
 			$this->form_validation->set_rules('name', 'Name', 'required');
 			$this->form_validation->set_rules('price', 'Price', 'required');
