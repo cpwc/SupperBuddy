@@ -36,7 +36,7 @@
 					<div class="portlet box blue-hoki">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-search"></i>Search Tools
+								<i class="fa fa-search"></i>Search Order
 							</div>
 							<div class="tools">
 								<a href="javascript:;" class="collapse">
@@ -45,13 +45,13 @@
 						</div>
 						<div class="portlet-body form">
 							<!-- BEGIN FORM-->
-							<?php echo form_open('caterer/orders'); ?>
+							<?php echo form_open('caterer/orders', array('class' => 'form-horizontal')); ?>
 							<div class="form-body">
-								<div class="row static-info">
-									<div class="col-md-2 name">
+								<div class="form-group">
+									<div class="col-md-3 control-label">
 										 Residence:
 									</div>
-									<div class="col-md-7 value">
+									<div class="col-md-9">
 										 <div class="form-group">
 											<select id="residence" name="residence" class="form-control input-large select2me" data-placeholder="Select...">
 												<option value=""></option>
@@ -62,11 +62,11 @@
 										</div>
 									</div>
 								</div>
-								<div class="row static-info">
-									<div class="col-md-2 name">
+								<div class="form-group">
+									<div class="col-md-3 control-label">
 										 Status:
 									</div>
-									<div class="col-md-7 value">
+									<div class="col-md-9">
 										 <div class="form-group">
 											<select id="status" name="status" class="form-control input-large select2me" data-placeholder="Select...">
 												<option value=""></option>
@@ -80,7 +80,7 @@
 							<div class="form-actions">
 								<div class="row">
 									<div class="col-md-offset-3 col-md-9">
-										<input type="submit" value="Search" class="btn purple"><i class="fa fa-search"></i></input>
+										<button type="Search" class="btn green">Search</button>
 									</div>
 								</div>
 							</div>
