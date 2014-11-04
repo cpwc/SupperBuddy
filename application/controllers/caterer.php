@@ -129,6 +129,9 @@ class Caterer extends CI_Controller
 			return;
 		}
 
+		$sql = "SELECT * FROM `residence`";
+		$data['residences'] = $this->db->query($sql)->result();
+
 		if ($this->input->server('REQUEST_METHOD') == 'POST') {
 			// $this->form_validation->set_rules('search', 'Search', 'required');
 			// // $this->form_validation->set_rules('search[residence]', 'Residence', '');

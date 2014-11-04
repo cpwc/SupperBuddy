@@ -47,24 +47,32 @@
 							<!-- BEGIN FORM-->
 							<?php echo form_open('caterer/orders'); ?>
 							<div class="form-body">
-								<div class="row search-form-default">
-									<div class="col-md-12">
-
-										<div class="input-group" style="width:50%">
-											<div class="input-cont">
-											<input type="text" placeholder="Residence" name="residence" class="form-control"/>
-											</div>
+								<div class="row static-info">
+									<div class="col-md-2 name">
+										 Residence:
+									</div>
+									<div class="col-md-7 value">
+										 <div class="form-group">
+											<select id="residence" name="residence" class="form-control input-large select2me" data-placeholder="Select...">
+												<option value=""></option>
+												<?php foreach ($residences as $residence) { ?>
+												<option value="<?php echo $residence->name; ?>"><?php echo $residence->name; ?></option>
+												<?php } ?>
+											</select>
 										</div>
-										
 									</div>
 								</div>
-								<br>
-								<div class="row search-form-default">
-									<div class="col-md-12">
-										<div class="input-group" style="width:50%">
-											<div class="input-cont" >
-												<input type="text" placeholder="Status" name="status" class="form-control"/>
-											</div>
+								<div class="row static-info">
+									<div class="col-md-2 name">
+										 Status:
+									</div>
+									<div class="col-md-7 value">
+										 <div class="form-group">
+											<select id="status" name="status" class="form-control input-large select2me" data-placeholder="Select...">
+												<option value=""></option>
+												<option value="OPEN">OPEN</option>
+												<option value="CLOSED">CLOSED</option>
+											</select>
 										</div>
 									</div>
 								</div>
