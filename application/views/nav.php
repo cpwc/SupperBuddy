@@ -14,7 +14,7 @@
 			<ul class="nav navbar-nav">
 				<!-- DOC: Remove data-hover="dropdown" and data-close-others="true" attributes below to disable the horizontal opening on mouse hover -->
 				<li class="classic-menu-dropdown active">
-					<a href="<?php echo base_url() . 'catererorder' ?>">
+					<a href="<?php echo base_url() . 'caterer/orders' ?>">
 					Orders <span class="selected">
 					</span>
 					</a>
