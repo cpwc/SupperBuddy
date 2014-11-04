@@ -57,6 +57,7 @@ class Student extends CI_Controller {
 
 				$session = array(
 					'matric_no' => $user->matric_no,
+					'name' => $user->name,
 					'email' => $user->email
 				);
 		
