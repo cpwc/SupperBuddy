@@ -48,6 +48,18 @@ class Order extends CI_Controller {
 
 	public function suborderdetails($id)
 	{
+		$usenet = $this->session->userdata('usenet');
+		$usenet_id = $usenet['matric_no'];
+
+		if (!$usenet_id) {
+			redirect('/student/login');
+			return;
+		}
+
+		$sql = "SELECT student.name as student_name, matric_no, email, phone, residence.name as residence_name FROM `student`, `residence` WHERE student.residence_id = residence.id AND student.matric_no = '" . $usenet_id . "' LIMIT 1"; // TODO: Select the particular student currently logged in as.
+		$student = $this->db->query($sql);
+		$data['student'] = $student->row();
+
 		$sql = "SELECT * FROM `order` WHERE order.id = " . $id . " LIMIT 1";
 		$order = $this->db->query($sql);
 		$data['order'] = $order->row();

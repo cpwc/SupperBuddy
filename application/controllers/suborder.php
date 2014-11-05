@@ -7,7 +7,7 @@ class SubOrder extends CI_Controller {
 		echo 'Hello, SubOrder!';
 	}
 
-	public function create()
+	public function create($order_id)
 	{
 		if ($this->input->server('REQUEST_METHOD') == 'POST') {
 			$this->form_validation->set_rules('name', 'Name', 'required');
