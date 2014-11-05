@@ -72,6 +72,17 @@ class Food extends CI_Controller {
 		}
 	}
 
+	public function list_caterer($caterer_id)
+	{
+		if ($this->input->server('REQUEST_METHOD') == 'GET') {
+			$sql = "SELECT * FROM `food` WHERE food.is_deleted = 0 AND caterer_id = " . $caterer_id;
+			$foods = $this->db->query($sql)->result();
+
+			header('Content-Type: application/json');
+			echo json_encode($foods);
+		}
+	}
+
 	public function delete($food_id)
 	{
 		$sql = "UPDATE `food` SET food.is_deleted = 1 WHERE food.id = " . $food_id;

@@ -98,63 +98,46 @@
 									<!-- Begin: life time stats -->
 									<div class="portlet">
 										<div class="portlet-body"> 
+											<div class="table-toolbar">
+												<div class="row">
+													<div class="col-md-12">
+														<div class="btn-group pull-right">
+															<button id="new_item" class="btn green">
+															Add New Item <i class="fa fa-plus"></i>
+															</button>
+														</div>
+													</div>
+												</div>
+											</div>
 											<div class="table-container">
 												<table class="table table-striped table-bordered table-hover" id="datatable_products">
 													<thead>
 														<tr role="row" class="heading">
-															<th width="10%">
+															<th>
 																ID
 															</th>
-															<th width="15%">
+															<th>
 																Food
 															</th>
-															<th width="15%">
+															<th>
 																Price
 															</th>
-															<th width="10%">
+															<th>
 																Quantity
 															</th>
-															<th width="10%">
-																Actions
+															<th>
+																Edit
 															</th>
-														</tr>
-														<tr>
-															<td>
-																1
-															</td>
-															<td>
-																<div class="form-group">
-																	<select id="food" name="food" class="form-control input-large select2me" data-placeholder="Select...">
-																		<option value=""></option>
-																		<?php foreach ($foods as $food) { ?>
-																		<option value="<?php echo $food->id; ?>"><?php echo $food->name; ?></option>
-																		<?php } ?>
-																	</select>
-																</div>
-															</td>
-															<td>
-																<div id="food-price" class="col-md-7 value">
-																</div>
-															</td>
-															<td>
-																<div class="margin-bottom-5">
-																	<input type="text" class="form-control form-filter input-sm" name="quantity" placeholder="QTY"/>
-																</div>
-
-															</td>
-
-															<td>
-
-																<button class="btn btn-sm yellow filter-submit margin-bottom"><i class="fa fa-submit"></i> Add</button>
-
-																<button class="btn btn-sm red filter-cancel"><i class="fa fa-times"></i> Remove</button>
-															</td>
+															<th>
+																Delete
+															</th>
 														</tr>
 													</thead>
 													<tbody>
 													</tbody>
 												</table>
 											</div>
+											<input type="hidden" id="caterer_id" name="caterer_id" value="<?php echo $order->caterer_id; ?>">
 										</div>
 									</div>
 									<!-- End: life time stats -->
