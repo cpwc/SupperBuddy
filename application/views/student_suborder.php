@@ -38,6 +38,9 @@
 							<div class="caption">
 								<i class="fa fa-cogs"></i>Order
 							</div>
+							<div class="actions">
+								<?php echo anchor('order', '<i class="fa fa-reply"></i> Back', array('class' => 'btn yellow')); ?>
+							</div>
 						</div>
 						<div class="portlet-body">
 							<div class="row">
