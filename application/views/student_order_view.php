@@ -25,6 +25,7 @@
 			</div>
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN PAGE CONTENT-->
+			<?php $this->load->view('flash_message') ?>
 			<!--Start Order List-->
 			<div class="row">
 				<div class="col-md-12 col-sm-12">

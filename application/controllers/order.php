@@ -29,7 +29,14 @@ class Order extends CI_Controller {
 			if ($this->form_validation->run() == FALSE) {
 				redirect('/order/create'); // TODO: Show validation message.
 			} else {
-				$this->_create_order();
+				if ($this->_create_order()) {
+					$this->session->set_flashdata('status', 1);
+					$this->session->set_flashdata('message', 'Order created successfully.');
+				} else {
+					$this->session->set_flashdata('status', 0);
+					$this->session->set_flashdata('message', 'Error creating order. Please try again.');
+				}
+				redirect('/order');
 			}
 		} else {
 			$usenet = $this->session->userdata('usenet');
@@ -94,7 +101,11 @@ class Order extends CI_Controller {
 		);
 		$this->db->query($sql, $params);
 		
-		echo $this->db->affected_rows();
+		if ($this->db->affected_rows() > 0) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 }

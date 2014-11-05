@@ -29,7 +29,7 @@
 			</div>
 			<!-- END PAGE HEADER-->
 				<!-- BEGIN PAGE CONTENT-->
-				<?php $this->load->view('caterer_flash_message') ?>
+				<?php $this->load->view('flash_message') ?>
 
 				<div class="row">
 					<div class="col-md-12 col-sm-12">
