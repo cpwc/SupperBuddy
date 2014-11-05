@@ -35,10 +35,10 @@
 						<div class="portlet blue-hoki box">
 							<div class="portlet-title">
 								<div class="caption">
-									<i class="fa fa-cogs"></i>Student Information
+									<i class="fa fa-user"></i>Student Information
 								</div>
 								<div class="actions btn-set">
-									<?php echo anchor('order', '<i class="fa fa-reply"></i> Back', array('class' => 'btn yellow')); ?>
+									<?php echo anchor('student/orders', '<i class="fa fa-reply"></i> Back', array('class' => 'btn yellow')); ?>
 								</div>
 							</div>
 							<div class="portlet-body">
@@ -92,7 +92,7 @@
 						<div class="portlet green-meadow box">
 							<div class="portlet-title">
 								<div class="caption">
-									<i class="fa fa-cogs"></i>Caterer
+									<i class="fa fa-users"></i>Caterer
 								</div>
 							</div>
 							<div class="portlet-body">

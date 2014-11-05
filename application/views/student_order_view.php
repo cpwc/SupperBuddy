@@ -71,7 +71,7 @@
 									<?php foreach ($orders as $order) { ?>
 									<tr>
 										<td>
-											<?php echo anchor('order/suborder/' . $order->id, $order->id); ?>
+											<?php echo anchor('order/' . $order->id, $order->id); ?>
 										</td>
 										<td><?php echo $order->caterer_name; ?></td>
 										<td><?php echo $order->student_name; ?></td>

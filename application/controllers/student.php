@@ -11,7 +11,7 @@ class Student extends CI_Controller {
 			redirect('/student/login');
 			return;
 		} else {
-			redirect('/order');
+			redirect('/student/order');
 			return;
 		}
 		
@@ -29,9 +29,7 @@ class Student extends CI_Controller {
 				return;
 			}
 
-
-
-			redirect('/order');
+			redirect('/student/order');
 		} else {
 			$this->load->view('student_login');
 		}
@@ -70,6 +68,44 @@ class Student extends CI_Controller {
 		
 
 		return false;	
+	}
+
+	public function orders($order_id = null)
+	{
+		$usenet = $this->session->userdata('usenet');
+		$usenet_id = $usenet['matric_no'];
+
+		if (!$usenet_id) {
+			redirect('/student/login');
+			return;
+		}
+
+		if (empty($order_id)) {
+			$sql = "SELECT order.id, caterer.name as `caterer_name`, student.name as `student_name`, residence.name as `residence_name`, order.created_at, order.updated_at, order.status FROM `order`, `caterer`, `student`, `residence` WHERE order.caterer_id = caterer.id AND residence.id = student.residence_id AND order.created_by = student.matric_no";
+			$orders = $this->db->query($sql);
+
+			$data['orders'] = $orders->result();
+
+			$this->load->view('student_order_view', $data);
+		} else {
+			$sql = "SELECT * FROM `order` WHERE order.id = " . $order_id . " LIMIT 1";
+			$order = $this->db->query($sql);
+			$data['order'] = $order->row();
+
+			$sql = "SELECT student.name as student_name, matric_no, email, phone, residence.name as residence_name FROM `student`, `residence` WHERE student.residence_id = residence.id AND student.matric_no = '" . $order->row()->created_by . "' LIMIT 1";
+			$student = $this->db->query($sql);
+			$data['student'] = $student->row();
+
+			$sql = "SELECT * FROM `caterer` WHERE caterer.id = '" . $order->row()->caterer_id . "' LIMIT 1";
+			$caterer = $this->db->query($sql);
+			$data['caterer'] = $caterer->row();
+
+			$sql = "SELECT * FROM `sub_order` WHERE sub_order.order_id = " . $order_id;
+			$suborders = $this->db->query($sql);
+			$data['suborders'] = $suborders->result();
+
+			$this->load->view('student_order_detail', $data);
+		}
 	}
 
 }
