@@ -29,15 +29,7 @@ class Food extends CI_Controller {
 			if ($this->form_validation->run() == FALSE) {
 				redirect('/food/create');
 			} else {
-				if ($this->_create()) {
-					$this->session->set_flashdata('status', 1);
-					$this->session->set_flashdata('message', 'Food created successfully.');
-				} else {
-					$this->session->set_flashdata('status', 0);
-					$this->session->set_flashdata('message', 'Error creating food. Please try again.');
-				}
-
-				redirect('/food');
+				$this->_create();
 			}
 		} else {
 			$this->load->view('caterer_food_create');
@@ -127,10 +119,14 @@ class Food extends CI_Controller {
 		$this->db->query($sql, $params);
 		
 		if ($this->db->affected_rows() > 0) {
-			return true;
+			$this->session->set_flashdata('status', 1);
+			$this->session->set_flashdata('message', 'Food created successfully.');
 		} else {
-			return false;
+			$this->session->set_flashdata('status', 0);
+			$this->session->set_flashdata('message', 'Error creating food. Please try again.');
 		}
+
+		redirect('/food');
 	}
 
 	private function _edit($food_id)
