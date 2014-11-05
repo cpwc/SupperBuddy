@@ -33,6 +33,9 @@
 							<div class="caption">
 								<i class="fa fa-cogs"></i>Order
 							</div>
+							<div class="actions btn-set">
+								<?php echo anchor('order/create', '<i class="fa fa-plus"></i> Create', array('class' => 'btn green')); ?>
+							</div>
 						</div>
 						<div class="portlet-body">
 							<div class="table-responsive">
@@ -65,13 +68,23 @@
 								<tbody>
 									<?php foreach ($orders as $order) { ?>
 									<tr>
-										<td><?php echo $order->id; ?></td>
+										<td>
+											<?php echo anchor('order/suborder/' . $order->id, $order->id); ?>
+										</td>
 										<td><?php echo $order->caterer_name; ?></td>
 										<td><?php echo $order->student_name; ?></td>
 										<td><?php echo $order->residence_name; ?></td>
 										<td><?php echo $order->created_at; ?></td>
 										<td><?php echo $order->updated_at; ?></td>
-										<td><?php echo $order->status; ?></td>
+										<td>
+											<?php
+												if ($order->status == 'OPEN') {
+													echo '<span class="label label-primary">' . $order->status . '</span>';
+												} else {
+													echo '<span class="label label-danger">' . $order->status . '</span>';
+												}
+											?>
+										</td>
 									</tr>
 									<?php } ?>
 								</tbody>

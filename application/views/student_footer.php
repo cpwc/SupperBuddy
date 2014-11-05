@@ -37,10 +37,12 @@
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="/public/scripts/metronic.js" type="text/javascript"></script>
+<script src="/public/scripts/order.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
 		jQuery(document).ready(function() {    
 			Metronic.init(); // init metronic core components
+			Order.init();
 		});
 	</script>
 <!-- END JAVASCRIPTS -->

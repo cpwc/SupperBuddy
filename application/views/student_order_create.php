@@ -15,7 +15,7 @@
 				<ul class="page-breadcrumb">
 					<li>
 						<i class="fa fa-home"></i>
-						<a href="index.html">Home</a>
+						<a href="index.html">Student</a>
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
@@ -36,6 +36,9 @@
 							<div class="portlet-title">
 								<div class="caption">
 									<i class="fa fa-cogs"></i>Student Information
+								</div>
+								<div class="actions btn-set">
+									<?php echo anchor('order', '<i class="fa fa-reply"></i> Back', array('class' => 'btn yellow')); ?>
 								</div>
 							</div>
 							<div class="portlet-body">
