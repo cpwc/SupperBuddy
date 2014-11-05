@@ -11,7 +11,7 @@ class Student extends CI_Controller {
 			redirect('/student/login');
 			return;
 		} else {
-			redirect('/student/order');
+			redirect('/student/orders');
 			return;
 		}
 		
@@ -29,7 +29,7 @@ class Student extends CI_Controller {
 				return;
 			}
 
-			redirect('/student/order');
+			redirect('/student/orders');
 		} else {
 			$this->load->view('student_login');
 		}
