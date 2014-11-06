@@ -90,12 +90,12 @@
 			Login <i class="m-icon-swapright m-icon-white"></i>
 			</button>
 		</div>
-		<div class="forget-password">
+<!-- 		<div class="forget-password">
 			<h4>Forgot your password ?</h4>
 			<p>
-				 no worries, click <?php echo anchor('caterer/forgetpassword', 'here') ?> to reset your password.
+				 no worries, click <?php //echo anchor('caterer/forgetpassword', 'here') ?> to reset your password.
 			</p>
-		</div>
+		</div> -->
 		<div class="create-account">
 			<p>
 				 Don't have an account yet? <?php echo anchor('caterer/register', 'Create an account') ?>
