@@ -161,7 +161,7 @@
 												<i class="fa fa-cogs"></i>Sub Order
 											</div>
 											<div class="actions">
-												<?php echo anchor('food', '<i class="fa fa-pencil"></i> Place Order', array('class' => 'btn btn-success')); ?>
+												<?php echo anchor('order/suborderdetails/' . $order->id, '<i class="fa fa-pencil"></i> Place Order', array('class' => 'btn btn-success')); ?>
 											</div>
 
 										</div>
