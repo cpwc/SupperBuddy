@@ -28,6 +28,9 @@
 				</ul>
 			</div>
 			<!-- END PAGE HEADER-->
+
+			<?php $this->load->view('flash_message') ?>
+
 			<?php echo form_open('order/create'); ?>
 			<!-- BEGIN PAGE CONTENT-->
 			<div class="row">
