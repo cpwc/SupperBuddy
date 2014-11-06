@@ -10,16 +10,14 @@ class SubOrder extends CI_Controller {
 	public function create($order_id)
 	{
 		if ($this->input->server('REQUEST_METHOD') == 'POST') {
-			$this->form_validation->set_rules('name', 'Name', 'required');
-			$this->form_validation->set_rules('price', 'Price', 'required');
-			
+			$this->form_validation->set_rules('foods', 'Foods', 'required');
+			$this->form_validation->set_rules('quantities', 'Quantities', 'required');
+
 			if ($this->form_validation->run() == FALSE) {
-				redirect('/food/create');
+				//redirect('/');
 			} else {
-				$this->_create();
+				$this->_create($order_id);
 			}
-		} else {
-			$this->load->view('caterer_food_create');
 		}
 	}
 
@@ -81,67 +79,65 @@ class SubOrder extends CI_Controller {
 		redirect('/food');
 	}
 
-	private function _create()
+	private function _create($order_id)
 	{
-		$caterer = $this->session->userdata('caterer');
-		$caterer_id = $caterer['id'];
+		$student = $this->session->userdata('usenet');
+		$student_id = $student['matric_no'];
 		
-		if (!$caterer_id) {
-			redirect('/caterer/login');
+		if (!$student_id) {
+			redirect('/student/login');
 			return;
 		}
 
-		$is_deleted = 0;
 		$time = date('Y-m-d H:i:s');
+		$total_price = 0;
+		$foods = $this->input->post('foods');
+		$prices = $this->input->post('prices');
+		$quantities = $this->input->post('quantities');
+
+		var_dump($this->input->post());
+
+		for ($i = 0; $i < count($this->input->post('prices')); $i++) {
+			$price = $prices[$i];
+			$quantity = $quantities[$i];
+			$total_price += $price * $quantity;
+		}
+
 		$params = array(
-			'name' => $this->input->post('name'),
-			'price' => $this->input->post('price'),
-			'is_deleted' => $is_deleted,
-			'caterer_id' => $caterer_id,
+			'order_id' => $order_id,
+			'ordered_by' => $student_id,
+			'total_price' => $total_price,
+			'paid' => false,
 			'created_at' => $time,
 			'updated_at' => $time
 		);
-
-		$sql = "INSERT INTO food (name, price, is_deleted, caterer_id, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?)";
+		$sql = "INSERT INTO `sub_order` (order_id, ordered_by, total_price, paid, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?)";
 		$this->db->query($sql, $params);
+		$suborder_id = $this->db->insert_id();
+
+		for ($i = 0; $i < count($this->input->post('prices')); $i++) {
+			$price = $prices[$i];
+			$quantity = $quantities[$i];
+			$total_price += $price * $quantity;
+
+			$params = array(
+				'suborder_id' => $suborder_id,
+				'food_id' => $foods[$i],
+				'quantity' => $quantities[$i]
+			);
+			$sql = "INSERT INTO `sub_order_detail` (suborder_id, food_id, quantity) VALUES (?, ?, ?)";
+			$this->db->query($sql, $params);
+		}
 		
 		if ($this->db->affected_rows() > 0) {
 			$this->session->set_flashdata('status', 1);
-			$this->session->set_flashdata('message', 'Food created successfully.');
+			$this->session->set_flashdata('message', 'SubOrder created successfully.');
 		} else {
 			$this->session->set_flashdata('status', 0);
-			$this->session->set_flashdata('message', 'Error creating food. Please try again.');
+			$this->session->set_flashdata('message', 'Error creating SubOrder. Please try again.');
 		}
 
-		redirect('/food');
-	}
-
-	private function _edit($food_id)
-	{
-		$params = array(
-				'name' => $this->input->post('name'),
-				'price' => $this->input->post('price'),
-				'id' => $food_id
-			);
-
-		$sql = "UPDATE `food` SET food.name = ?, food.price = ? WHERE food.id = ?";
-		$this->db->query($sql, $params);
-
-		if ($this->db->affected_rows() > 0) {
-			$sql = "SELECT * FROM `food` WHERE food.id = " . $food_id;
-			$food = $this->db->query($sql);
-
-			$this->session->set_flashdata('status', 1);
-			$this->session->set_flashdata('message', 'Food [' . $food->row()->name . '] edited successfully.');
-		} else {
-			$sql = "SELECT * FROM `food` WHERE food.id = " . $food_id;
-			$food = $this->db->query($sql);
-
-			$this->session->set_flashdata('status', 0);
-			$this->session->set_flashdata('message', 'Error editing Food [' . $food->row()->name . '].');
-		}
-
-		redirect('/food');
+		redirect('/student/orders/' . $order_id);
 	}
 
 }

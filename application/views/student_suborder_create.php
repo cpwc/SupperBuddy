@@ -103,41 +103,49 @@
 													<div class="col-md-12">
 														<div class="btn-group pull-right">
 															<button id="new_item" class="btn green">
-															Add New Item <i class="fa fa-plus"></i>
+																Add New Item <i class="fa fa-plus"></i>
 															</button>
 														</div>
 													</div>
 												</div>
 											</div>
-											<div class="table-container">
-												<table class="table table-striped table-bordered table-hover" id="datatable_products">
-													<thead>
-														<tr role="row" class="heading">
-															<th>
-																ID
-															</th>
-															<th>
-																Food
-															</th>
-															<th>
-																Price
-															</th>
-															<th>
-																Quantity
-															</th>
-															<th>
-																Edit
-															</th>
-															<th>
-																Delete
-															</th>
-														</tr>
-													</thead>
-													<tbody>
-													</tbody>
-												</table>
-											</div>
-											<input type="hidden" id="caterer_id" name="caterer_id" value="<?php echo $order->caterer_id; ?>">
+											<?php echo form_open('suborder/create/' . $order->id); ?>
+												<div class="table-container">
+													<table class="table table-striped table-bordered table-hover" id="datatable_products">
+														<thead>
+															<tr role="row" class="heading">
+																<th>
+																	Food
+																</th>
+																<th>
+																	Price
+																</th>
+																<th>
+																	Quantity
+																</th>
+																<th>
+																	Edit
+																</th>
+																<th>
+																	Delete
+																</th>
+															</tr>
+														</thead>
+														<tbody>
+														</tbody>
+													</table>
+												</div>
+												<input type="hidden" id="caterer_id" name="caterer_id" value="<?php echo $order->caterer_id; ?>">
+												<div class="table-toolbar">
+													<div class="row">
+														<div class="col-md-12">
+															<div class="btn-group pull-right">
+																<input type="submit" class="btn blue" value="Create Order">
+															</div>
+														</div>
+													</div>
+												</div>
+											<?php echo form_close(); ?>
 										</div>
 									</div>
 									<!-- End: life time stats -->

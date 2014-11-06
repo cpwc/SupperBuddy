@@ -46,7 +46,7 @@ class Order extends CI_Controller {
 		echo 'Moved to student controller!';
 	}
 
-	public function suborderdetails($id)
+	public function suborderdetails($order_id)
 	{
 		$usenet = $this->session->userdata('usenet');
 		$usenet_id = $usenet['matric_no'];
@@ -60,7 +60,7 @@ class Order extends CI_Controller {
 		$student = $this->db->query($sql);
 		$data['student'] = $student->row();
 
-		$sql = "SELECT * FROM `order` WHERE order.id = " . $id . " LIMIT 1";
+		$sql = "SELECT * FROM `order` WHERE order.id = " . $order_id . " LIMIT 1";
 		$order = $this->db->query($sql);
 		$data['order'] = $order->row();
 
@@ -68,7 +68,7 @@ class Order extends CI_Controller {
 		$foods = $this->db->query($sql);
 		$data['foods'] = $foods->result();
 
-		$this->load->view('student_suborder_details', $data);
+		$this->load->view('student_suborder_create', $data);
 	}
 
 	private function _create_order()
