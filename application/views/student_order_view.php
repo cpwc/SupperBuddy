@@ -64,7 +64,6 @@
 									<th>
 										 Status
 									</th>
-									<th></th>
 								</tr>
 								</thead>
 								<tbody>
@@ -86,10 +85,6 @@
 													echo '<span class="label label-danger">' . $order->status . '</span>';
 												}
 											?>
-										</td>
-										<td>
-											<?php echo anchor('order/edit/' . $order->id, 'Edit', array('class' => 'btn btn-sm yellow filter-submit')); ?>
-											<?php echo anchor('order/delete/' . $order->id, '<i class="fa fa-times"></i> Remove', array('class' => 'btn btn-sm red filter-cancel', 'onclick' => "return confirm('Are you sure want to delete?');")) ?>
 										</td>
 									</tr>
 									<?php } ?>
