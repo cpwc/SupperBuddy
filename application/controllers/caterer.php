@@ -183,16 +183,26 @@ class Caterer extends CI_Controller
 		$params = array(
 			'name' => $this->input->post('organizationname'),
 			'email' => $this->input->post('email'),
+			'phone' => $this->input->post('phone'),
 			'address' => $this->input->post('address'),
+			'description' => $this->input->post('description'),
 			'password' => $hashed,
 			'created_at' => $time,
 			'updated_at' => $time
 			);
 		
-		$sql = "INSERT INTO caterer (name, email, address, password, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?)";
+		$sql = "INSERT INTO caterer (name, email, phone, address, description, password, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 		$this->db->query($sql, $params);
-		
-		echo $this->db->affected_rows();
+
+		if ($this->db->affected_rows() > 0) {
+			$this->session->set_flashdata('status', 1);
+			$this->session->set_flashdata('message', 'Caterer account created successfully.');
+		} else {
+			$this->session->set_flashdata('status', 0);
+			$this->session->set_flashdata('message', 'Error creating Caterer account. Please try again.');
+		}
+
+		redirect('/caterer/login');
 	}
 	
 	private function _forgetpassword()
