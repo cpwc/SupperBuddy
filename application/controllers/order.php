@@ -23,7 +23,7 @@ class Order extends CI_Controller {
 					$this->session->set_flashdata('status', 0);
 					$this->session->set_flashdata('message', 'Error creating order. Please try again.');
 				}
-				redirect('/order');
+				redirect('/caterer/orders');
 			}
 		} else {
 			$usenet = $this->session->userdata('usenet');
